@@ -14,7 +14,7 @@ const Layout = (props) => (
         <header>
             <Menu/>
         </header>
-        <main role="main">
+        <main role="main" className={props.className}>
             {props.children}
         </main>
         <Footer/>
@@ -24,13 +24,15 @@ const Layout = (props) => (
 Layout.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
-    keywords: PropTypes.string
+    keywords: PropTypes.string,
+    className: PropTypes.string
 };
 
 Layout.defaultProps = {
     title: "",
     description: "",
-    keywords: ""
+    keywords: "",
+    className: ""
 };
 
 export default Layout;
