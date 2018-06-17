@@ -24,8 +24,8 @@ const Footer = () => {
                     <div className="col-6 col-md">
                         <h5>Χαρακτηριστικά</h5>
                         <ul className="list-unstyled text-small">
-                            <li><Link to="/" className="text-muted" href="#">Καταχώρηση Ζητημάτων</Link></li>
-                            <li><Link to="/" className="text-muted" href="#">Επικοινωνία με τον Δήμο</Link></li>
+                            <li><Link to="/" className="text-muted" href="#">Καταχώρηση ζητημάτων</Link></li>
+                            <li><Link to="/" className="text-muted" href="#">Επικοινωνία με τον δήμο</Link></li>
                             <li><Link to="/" className="text-muted" href="#">Εθελοντισμός</Link></li>
                         </ul>
                     </div>
@@ -53,7 +53,7 @@ const Footer = () => {
                             <li><Link to="/" className="text-muted" href="#">Η Ομάδα μας</Link></li>
                             <li><Link to="/" className="text-muted" href="#">Επικοινωνία</Link></li>
                             <li><Link to="/" className="text-muted" href="#">Ιδιωτικότητα</Link></li>
-                            <li><Link to="/" className="text-muted" href="#">Όροι Χρήσης</Link></li>
+                            <li><Link to="/" className="text-muted" href="#">Όροι χρήσης</Link></li>
                         </ul>
                     </div>
                 </div>
