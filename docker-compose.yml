@@ -1,0 +1,36 @@
+version: '3.6'
+
+services:
+
+  jenkins:
+    container_name: jenkins
+    build:
+      context: ./jenkins
+      dockerfile: Dockerfile
+    privileged: true
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/local/bin/docker:/usr/bin/docker
+
+  registry:
+    image: registry
+    container_name: registry
+    restart: always
+    ports:
+      - 5000:5000
+
+  web-service:
+    container_name: web-service
+    build:
+      context: ./web-service
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3006:3006
+    volumes:
+      - ./web-service:/usr/src/app/
+      - ./web-service/node_modules
