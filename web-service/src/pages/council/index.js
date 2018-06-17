@@ -2,13 +2,26 @@ import React, {Component} from 'react';
 import Layout from "../../components/layout";
 import Announcement from "../../components/announcement";
 import PublicAuthorityPersonList from "../../components/PublicAuthorityPersonList";
-import {Link} from "react-router-dom";
+import {Route} from "react-router-dom";
+import SidebarLink from "../../components/sidebarLink";
 
 class Council extends Component {
     render() {
-        const baseUrl = this.props.location['pathname'];
-        const arxikhSelidaURL = baseUrl;
-        const dhmotikiArxiURL = baseUrl + "/dhmotik-arxi";
+        const baseUrl = this.props.match.url;
+        let urls = [
+            {name: "Δήμος Σπάτων - Αρτέμιδος", to: baseUrl},
+            {name: "Δημοτική αρχή", to: baseUrl + "/dhmotikh-arxh"},
+            {name: "Δημότες", to: baseUrl + "/dhmotes"},
+            {name: "Εθελοντισμός", to: baseUrl + "/ethelontismos"},
+            {name: "Ζητήματα", to: baseUrl + "/zhthmata"},
+            {name: "Οικονομικά στοιχεία", to: baseUrl + "/oikonomika-stoixeia"}
+        ];
+
+        urls = urls.map(url => {
+            return (
+                <SidebarLink key={url.to} {...url}/>
+            )
+        });
 
         return (
             <Layout title="Δήμος Αχαρνών" className="bg-light">
@@ -34,28 +47,7 @@ class Council extends Component {
                     <div className="row">
                         <div className="col-md-3">
                             <ul className="list-group mb-3">
-                                <li className="list-group-item d-flex justify-content-between lh-condensed">
-                                    <Link to={arxikhSelidaURL}>
-                                        <small className="text-muted">Δήμος Σπάτων - Αρτέμιδος</small>
-                                    </Link>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between lh-condensed">
-                                    <Link to={dhmotikiArxiURL}>
-                                        <small className="text-muted">Δημοτική αρχή</small>
-                                    </Link>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between lh-condensed">
-                                    <small className="text-muted">Δημότες</small>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between lh-condensed">
-                                    <small className="text-muted">Εθελοντισμός</small>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between lh-condensed">
-                                    <small className="text-muted">Ζητήματα</small>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between lh-condensed">
-                                    <small className="text-muted">Οικονομικά Στοιχεία</small>
-                                </li>
+                                {urls}
                             </ul>
 
                             <Announcement name={"Επόμενη συνέλευση"}
@@ -68,7 +60,24 @@ class Council extends Component {
                         </div>
                         <div className="col-md-9">
                             <div className="row">
-                                <PublicAuthorityPersonList/>
+                                <Route exact path={"/dhmos/:id"} render={() => (
+                                    <p>Δήμος Σπατών - Αρτέμιδος</p>
+                                )}/>
+                                <Route path={"/dhmos/:id/dhmotikh-arxh"} render={() => (
+                                    <PublicAuthorityPersonList/>
+                                )}/>
+                                <Route path={"/dhmos/:id/dhmotes"} render={() => (
+                                    <p>Δημότες</p>
+                                )}/>
+                                <Route path={"/dhmos/:id/ethelontismos"} render={() => (
+                                    <p>Εθελοντισμός</p>
+                                )}/>
+                                <Route path={"/dhmos/:id/zhthmata"} render={() => (
+                                    <p>Ζητήματα</p>
+                                )}/>
+                                <Route path={"/dhmos/:id/oikonomika-stoixeia"} render={() => (
+                                    <p>Οικονομικά στοιχεία</p>
+                                )}/>
                             </div>
                         </div>
                     </div>
