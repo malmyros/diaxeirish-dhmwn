@@ -19,9 +19,35 @@ services:
   registry:
     image: registry
     container_name: registry
-    restart: always
     ports:
       - 5000:5000
+    restart: always
+
+  local-authorities-db:
+    container_name: local-authorities-db
+    build:
+      context: ./local-authorities-db
+      dockerfile: Dockerfile
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=
+      - POSTGRES_DB=local_authorities_db
+      - POSTGRES_INITDB_ARGS= --encoding=UTF-8
+      - TZ=UTC
+    ports:
+      - 5433:5432
+    restart: always
+
+  local-authorities:
+    container_name: local-authorities
+    environment:
+      - spring.datasource.url=jdbc:postgresql://local-authorities-db:5432/local_authorities_db
+    image: com.diaxeirish-dhmwn/local-authorities:0.0.1-SNAPSHOT
+    links:
+      - local-authorities-db:database
+    ports:
+      - 3007:3007
+    restart: always
 
   web-service:
     container_name: web-service

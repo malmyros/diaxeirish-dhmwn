@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/diaxeirish-dhmwn.iml" filepath="$PROJECT_DIR$/.idea/diaxeirish-dhmwn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/local-authorities/local-authorities.iml" filepath="$PROJECT_DIR$/local-authorities/local-authorities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/local-authorities_main.iml" filepath="$PROJECT_DIR$/.idea/modules/local-authorities_main.iml" group="local-authorities" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/local-authorities_test.iml" filepath="$PROJECT_DIR$/.idea/modules/local-authorities_test.iml" group="local-authorities" />
     </modules>
   </component>
 </project>
