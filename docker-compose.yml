@@ -23,32 +23,6 @@ services:
       - 5000:5000
     restart: always
 
-  local-authorities-db:
-    container_name: local-authorities-db
-    build:
-      context: ./local-authorities-db
-      dockerfile: Dockerfile
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=
-      - POSTGRES_DB=local_authorities_db
-      - POSTGRES_INITDB_ARGS= --encoding=UTF-8
-      - TZ=UTC
-    ports:
-      - 5433:5432
-    restart: always
-
-  local-authorities:
-    container_name: local-authorities
-    environment:
-      - spring.datasource.url=jdbc:postgresql://local-authorities-db:5432/local_authorities_db
-    image: com.diaxeirish-dhmwn/local-authorities:0.0.1-SNAPSHOT
-    links:
-      - local-authorities-db:database
-    ports:
-      - 3007:3007
-    restart: always
-
   web-service:
     container_name: web-service
     build:
@@ -60,3 +34,32 @@ services:
     volumes:
       - ./web-service:/usr/src/app/
       - ./web-service/node_modules
+
+  local-authorities-db:
+    container_name: local-authorities-db
+    build:
+      context: ./local-authorities-db
+      dockerfile: Dockerfile
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=
+      - POSTGRES_INITDB_ARGS= --encoding=UTF-8
+      - TZ=UTC
+    healthcheck:
+      test: exit 0
+
+  local-authorities:
+    container_name: local-authorities
+    build:
+      context: ./local-authorities
+      dockerfile: Dockerfile
+    environment:
+      - spring.datasource.url=jdbc:postgresql://local-authorities-db:5432/local_authorities_db
+    ports:
+      - 3007:3007
+    links:
+      - local-authorities-db
+    depends_on:
+      - local-authorities-db

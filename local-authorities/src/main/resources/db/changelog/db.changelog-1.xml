@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd"
+                   logicalFilePath="liquibase/db.changelog.1.xml">
+
+    <changeSet id="1" author="michail.almyros">
+        <createTable tableName="regions">
+            <column name="id" type="BIGSERIAL"/>
+            <column name="version" type="BIGINT"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="record_created_at" type="timestamp" defaultValueComputed="now()"/>
+            <column name="record_updated_at" type="timestamp" defaultValueComputed="now()"/>
+        </createTable>
+
+        <addPrimaryKey tableName="regions" columnNames="id" constraintName="pk_regions"/>
+        <addNotNullConstraint tableName="regions" columnName="version"/>
+        <addNotNullConstraint tableName="regions" columnName="record_created_at"/>
+        <addNotNullConstraint tableName="regions" columnName="record_updated_at"/>
+    </changeSet>
+
+    <changeSet id="2" author="michail.almyros">
+        <insert tableName="regions">
+            <column name="name" value="Ανατολική Μακεδονία και Θράκη"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="regions">
+            <column name="name" value="Κεντρική Μακεδονία"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="regions">
+            <column name="name" value="Δυτική Μακεδονία"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="regions">
+            <column name="name" value="Ήπειρος"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="regions">
+            <column name="name" value="Θεσσαλία"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="regions">
+            <column name="name" value="Ιόνιοι Νήσοι"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="regions">
+            <column name="name" value="Δυτική Ελλάδα"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="regions">
+            <column name="name" value="Στερεά Ελλάδα"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="regions">
+            <column name="name" value="Αττική"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="regions">
+            <column name="name" value="Πελοπόννησος"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="regions">
+            <column name="name" value="Βόρειο Αιγαίο"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="regions">
+            <column name="name" value="Νότιο Αιγαίο"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+        <insert tableName="regions">
+            <column name="name" value="Κρήτη"/>
+            <column name="version" valueNumeric="0"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

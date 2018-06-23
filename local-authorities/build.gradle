@@ -23,7 +23,7 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    maven { url "https://repo.spring.io/milestone" }
+    maven { url = 'https://repo.spring.io/milestone' }
 }
 
 
@@ -38,8 +38,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('org.liquibase:liquibase-core')
-    compile('org.springframework.cloud:spring-cloud-starter-config')
-    compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+//    compile('org.springframework.cloud:spring-cloud-starter-config')
+//    compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
 //    compile('org.springframework.session:spring-session-core')
     runtime('org.springframework.boot:spring-boot-devtools')
     runtime('org.postgresql:postgresql')

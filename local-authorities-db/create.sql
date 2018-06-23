@@ -1,1 +1,1 @@
-CREATE DATABASE IF NOT EXISTS local_authorities_db;
+CREATE DATABASE local_authorities_db;

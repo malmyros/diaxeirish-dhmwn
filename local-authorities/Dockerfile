@@ -2,13 +2,10 @@
 FROM openjdk:8-jdk-alpine
 MAINTAINER Michail Almyros <m.almyros@gmail.com>
 
-VOLUME /tmp
+RUN apk add --no-cache bash
 
-# Make port 8080 available to the world outside this container
-EXPOSE 3007
+ADD local-authorities-0.0.1-SNAPSHOT.jar app.jar
 
-# Add the application's jar to the container
-ADD local-authorities-0.0.1-SNAPSHOT.jar local-authorities.jar
+RUN bash -c 'touch /app.jar'
 
-# Run the jar file
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/local-authorities.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
