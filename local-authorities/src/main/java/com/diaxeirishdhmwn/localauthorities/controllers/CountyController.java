@@ -21,7 +21,7 @@ public class CountyController {
     }
 
     @GetMapping("/{county_id}")
-    public County findCountyById(@PathVariable long county_id) {
-        return countyService.findCountyById(county_id);
+    public County findCountyById(@PathVariable long councilId) {
+        return countyService.findCountyById(councilId);
     }
 }
