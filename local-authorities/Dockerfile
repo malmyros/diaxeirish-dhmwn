@@ -4,7 +4,7 @@ MAINTAINER Michail Almyros <m.almyros@gmail.com>
 
 RUN apk add --no-cache bash
 
-ADD local-authorities-0.0.1-SNAPSHOT.jar app.jar
+ADD build/libs/local-authorities-0.0.1-SNAPSHOT.jar app.jar
 
 RUN bash -c 'touch /app.jar'
 

@@ -1,5 +1,8 @@
-package com.diaxeirishdhmwn.localauthorities.region;
+package com.diaxeirishdhmwn.localauthorities.services;
 
+import com.diaxeirishdhmwn.localauthorities.exceptions.RegionNoFoundException;
+import com.diaxeirishdhmwn.localauthorities.models.Region;
+import com.diaxeirishdhmwn.localauthorities.repositories.RegionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

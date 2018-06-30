@@ -1,5 +1,6 @@
-package com.diaxeirishdhmwn.localauthorities.region;
+package com.diaxeirishdhmwn.localauthorities.repositories;
 
+import com.diaxeirishdhmwn.localauthorities.models.Region;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

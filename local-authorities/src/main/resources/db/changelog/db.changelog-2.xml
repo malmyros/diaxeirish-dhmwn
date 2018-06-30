@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd"
+                   logicalFilePath="liquibase/db.changelog.2.xml">
+
+    <changeSet id="1" author="michail.almyros">
+        <createTable tableName="districts">
+            <column name="id" type="BIGSERIAL"/>
+            <column name="version" type="BIGINT" defaultValueNumeric="0"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="record_created_at" type="timestamp" defaultValueComputed="now()"/>
+            <column name="record_updated_at" type="timestamp" defaultValueComputed="now()"/>
+        </createTable>
+
+        <addPrimaryKey tableName="districts" columnNames="id" constraintName="pk_districts"/>
+        <addNotNullConstraint tableName="districts" columnName="version"/>
+        <addNotNullConstraint tableName="districts" columnName="record_created_at"/>
+        <addNotNullConstraint tableName="districts" columnName="record_updated_at"/>
+    </changeSet>
+
+    <changeSet id="2" author="michail.almyros">
+        <insert tableName="districts">
+            <column name="name" value="Δράμας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Καβάλας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Θάσου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Ξάνθης"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Ροδόπης"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Έβρου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Θεσσαλονίκης"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Ημαθίας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Κιλκίς"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Πέλλας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Πιερίας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Σερρών"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Χαλκιδικής"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Κοζάνης"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Γρεβενών"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Καστοριάς"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Φλώρινας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Άρτας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Θεσπρωτίας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Ιωαννίνων"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Πρέβεζας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Καρδίτσας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Λάρισας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Μαγνησίας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Σποράδων"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Τρικάλων"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Κέρκυρας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Ζακύνθου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Ιθάηκης"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Κεφαλληνίας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Λευκάδας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Αιτωλοακαρνανίας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Αχαίας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Ηλείας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Βοιωτίας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Ευβοίας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Ευρυτανίας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Φθιώτιδας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Φωκίδας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Κεντρικού Τομέα Αθηνών"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Νότιου Τομέα Αθηνών"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Βόρειου Τομέα Αθηνών"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Δυτικού Τομέα Αθηνών"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Πειραιώς"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Νήσων Αττικής"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Δυτικής Αττικής"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Ανατολικής Αττικής"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Αργολίδας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Αρκαδίας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Κορινθίας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Λακωνίας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Μεσσηνίας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Ικαρίας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Λέσβου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Λήμνου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Σάμος"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Χίου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Άνδρου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Κέας Κύθνου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Μήλου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Νάξου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Πάρου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Σύρου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Τήνου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Θήρας"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Καλήμνου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Καρπάθου Κάσου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Κώς"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Μυκόνου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Ρόδου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Ηρακλείου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Λασιθίου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Ρεθύμνου"/>
+        </insert>
+        <insert tableName="districts">
+            <column name="name" value="Χανίων"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

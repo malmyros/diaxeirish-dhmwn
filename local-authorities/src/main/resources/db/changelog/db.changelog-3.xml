@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd"
+                   logicalFilePath="liquibase/db.changelog.3.xml">
+
+    <changeSet id="1" author="michail.almyros">
+        <createTable tableName="counties">
+            <column name="id" type="BIGSERIAL"/>
+            <column name="version" type="BIGINT" defaultValueNumeric="0"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="region_id" type="BIGSERIAL"/>
+            <column name="district_id" type="BIGSERIAL"/>
+            <column name="record_created_at" type="TIMESTAMP" defaultValueComputed="now()"/>
+            <column name="record_updated_at" type="TIMESTAMP" defaultValueComputed="now()"/>
+        </createTable>
+
+        <addPrimaryKey tableName="counties" columnNames="id" constraintName="pk_counties"/>
+        <addForeignKeyConstraint baseTableName="counties"
+                                 baseColumnNames="region_id"
+                                 constraintName="fk_counties_regions_reference"
+                                 referencedTableName="regions"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="counties"
+                                 baseColumnNames="district_id"
+                                 constraintName="fk_counties_districts_reference"
+                                 referencedTableName="districts"
+                                 referencedColumnNames="id"/>
+        <addNotNullConstraint tableName="counties" columnName="version"/>
+        <addNotNullConstraint tableName="counties" columnName="record_created_at"/>
+        <addNotNullConstraint tableName="counties" columnName="record_updated_at"/>
+    </changeSet>
+
+    <changeSet id="2" author="michail.almyros">
+        <insert tableName="counties">
+            <column name="name" value="Νομός Δράμας"/>
+            <column name="region_id" value="1"/>
+            <column name="district_id" value="1"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Καβάλας"/>
+            <column name="region_id" value="1"/>
+            <column name="district_id" value="2"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Καβάλας"/>
+            <column name="region_id" value="1"/>
+            <column name="district_id" value="3"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Θάσου"/>
+            <column name="region_id" value="1"/>
+            <column name="district_id" value="4"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Ξάνθης"/>
+            <column name="region_id" value="1"/>
+            <column name="district_id" value="5"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Ροδόπης"/>
+            <column name="region_id" value="1"/>
+            <column name="district_id" value="6"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Έβρου"/>
+            <column name="region_id" value="1"/>
+            <column name="district_id" value="7"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="3" author="michail.almyros">
+        <insert tableName="counties">
+            <column name="name" value="Νομός Ημαθίας"/>
+            <column name="region_id" value="2"/>
+            <column name="district_id" value="8"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Κιλκίς"/>
+            <column name="region_id" value="2"/>
+            <column name="district_id" value="9"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Πέλλας"/>
+            <column name="region_id" value="2"/>
+            <column name="district_id" value="10"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Πιερίας"/>
+            <column name="region_id" value="2"/>
+            <column name="district_id" value="11"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Σερρών"/>
+            <column name="region_id" value="2"/>
+            <column name="district_id" value="12"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Χαλκιδικής"/>
+            <column name="region_id" value="2"/>
+            <column name="district_id" value="13"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="4" author="michail.almyros">
+        <insert tableName="counties">
+            <column name="name" value="Νομός Κοζάνης"/>
+            <column name="region_id" value="3"/>
+            <column name="district_id" value="14"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Γρεβενών"/>
+            <column name="region_id" value="3"/>
+            <column name="district_id" value="15"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Καστοριάς"/>
+            <column name="region_id" value="3"/>
+            <column name="district_id" value="16"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Φλώρινας"/>
+            <column name="region_id" value="3"/>
+            <column name="district_id" value="17"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="5" author="michail.almyros">
+        <insert tableName="counties">
+            <column name="name" value="Νομός Άρτας"/>
+            <column name="region_id" value="4"/>
+            <column name="district_id" value="18"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Θεσπρωτίας"/>
+            <column name="region_id" value="4"/>
+            <column name="district_id" value="19"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Ιωαννίνων"/>
+            <column name="region_id" value="4"/>
+            <column name="district_id" value="20"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Πρέβεζας"/>
+            <column name="region_id" value="4"/>
+            <column name="district_id" value="21"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="6" author="michail.almyros">
+        <insert tableName="counties">
+            <column name="name" value="Νομός Καρδίτσας"/>
+            <column name="region_id" value="5"/>
+            <column name="district_id" value="22"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Λάρισας"/>
+            <column name="region_id" value="5"/>
+            <column name="district_id" value="23"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Μαγνησίας"/>
+            <column name="region_id" value="5"/>
+            <column name="district_id" value="24"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Μαγνησίας"/>
+            <column name="region_id" value="5"/>
+            <column name="district_id" value="25"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Τρικάλων"/>
+            <column name="region_id" value="5"/>
+            <column name="district_id" value="26"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="7" author="michail.almyros">
+        <insert tableName="counties">
+            <column name="name" value="Νομός Κέρκυρας"/>
+            <column name="region_id" value="6"/>
+            <column name="district_id" value="27"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Ζακύνθου"/>
+            <column name="region_id" value="6"/>
+            <column name="district_id" value="28"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Κεφαλληνίας"/>
+            <column name="region_id" value="6"/>
+            <column name="district_id" value="29"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Κεφαλονιάς"/>
+            <column name="region_id" value="6"/>
+            <column name="district_id" value="30"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Λευκάδας"/>
+            <column name="region_id" value="6"/>
+            <column name="district_id" value="31"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="8" author="michail.almyros">
+        <insert tableName="counties">
+            <column name="name" value="Νομός Αιτωλοακαρνανίας"/>
+            <column name="region_id" value="7"/>
+            <column name="district_id" value="32"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Αχαίας"/>
+            <column name="region_id" value="7"/>
+            <column name="district_id" value="33"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Ηλείας"/>
+            <column name="region_id" value="7"/>
+            <column name="district_id" value="34"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="9" author="michail.almyros">
+        <insert tableName="counties">
+            <column name="name" value="Νομός Βοιωτίας"/>
+            <column name="region_id" value="8"/>
+            <column name="district_id" value="35"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Ευβοίας"/>
+            <column name="region_id" value="8"/>
+            <column name="district_id" value="36"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Ευρυτανίας"/>
+            <column name="region_id" value="8"/>
+            <column name="district_id" value="37"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Φθιώτιδας"/>
+            <column name="region_id" value="8"/>
+            <column name="district_id" value="38"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Φωκίδας"/>
+            <column name="region_id" value="8"/>
+            <column name="district_id" value="39"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="10" author="michail.almyros">
+        <insert tableName="counties">
+            <column name="name" value="Νομός Αττικής"/>
+            <column name="region_id" value="9"/>
+            <column name="district_id" value="40"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Αττικής"/>
+            <column name="region_id" value="9"/>
+            <column name="district_id" value="41"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Αττικής"/>
+            <column name="region_id" value="9"/>
+            <column name="district_id" value="42"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Αττικής"/>
+            <column name="region_id" value="9"/>
+            <column name="district_id" value="43"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Αττικής"/>
+            <column name="region_id" value="9"/>
+            <column name="district_id" value="44"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Αττικής"/>
+            <column name="region_id" value="9"/>
+            <column name="district_id" value="45"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Αττικής"/>
+            <column name="region_id" value="9"/>
+            <column name="district_id" value="46"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Αττικής"/>
+            <column name="region_id" value="9"/>
+            <column name="district_id" value="47"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="11" author="michail.almyros">
+        <insert tableName="counties">
+            <column name="name" value="Νομός Αργολίδας"/>
+            <column name="region_id" value="10"/>
+            <column name="district_id" value="48"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Αρκαδίας"/>
+            <column name="region_id" value="10"/>
+            <column name="district_id" value="49"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Κορινθίας"/>
+            <column name="region_id" value="10"/>
+            <column name="district_id" value="50"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Λακωνίας"/>
+            <column name="region_id" value="10"/>
+            <column name="district_id" value="51"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Μεσσηνίας"/>
+            <column name="region_id" value="10"/>
+            <column name="district_id" value="52"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="12" author="michail.almyros">
+        <insert tableName="counties">
+            <column name="name" value="Νομός Σάμου"/>
+            <column name="region_id" value="11"/>
+            <column name="district_id" value="53"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Λέσβου"/>
+            <column name="region_id" value="11"/>
+            <column name="district_id" value="54"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Λέσβου"/>
+            <column name="region_id" value="11"/>
+            <column name="district_id" value="55"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Σάμου"/>
+            <column name="region_id" value="11"/>
+            <column name="district_id" value="56"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Χίου"/>
+            <column name="region_id" value="11"/>
+            <column name="district_id" value="57"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="13" author="michail.almyros">
+        <insert tableName="counties">
+            <column name="name" value="Νομός Κυκλάδων"/>
+            <column name="region_id" value="12"/>
+            <column name="district_id" value="58"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Κυκλάδων"/>
+            <column name="region_id" value="12"/>
+            <column name="district_id" value="59"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Κυκλάδων"/>
+            <column name="region_id" value="12"/>
+            <column name="district_id" value="60"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Κυκλάδων"/>
+            <column name="region_id" value="12"/>
+            <column name="district_id" value="61"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Κυκλάδων"/>
+            <column name="region_id" value="12"/>
+            <column name="district_id" value="62"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Κυκλάδων"/>
+            <column name="region_id" value="12"/>
+            <column name="district_id" value="63"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Κυκλάδων"/>
+            <column name="region_id" value="12"/>
+            <column name="district_id" value="64"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Κυκλάδων"/>
+            <column name="region_id" value="12"/>
+            <column name="district_id" value="65"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Δωδεκανήσου"/>
+            <column name="region_id" value="12"/>
+            <column name="district_id" value="66"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Δωδεκανήσου"/>
+            <column name="region_id" value="12"/>
+            <column name="district_id" value="67"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Δωδεκανήσου"/>
+            <column name="region_id" value="12"/>
+            <column name="district_id" value="68"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Δωδεκανήσου"/>
+            <column name="region_id" value="12"/>
+            <column name="district_id" value="69"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Δωδεκανήσου"/>
+            <column name="region_id" value="12"/>
+            <column name="district_id" value="70"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="14" author="michail.almyros">
+        <insert tableName="counties">
+            <column name="name" value="Νομός Ηρακλείου"/>
+            <column name="region_id" value="13"/>
+            <column name="district_id" value="71"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Λασιθίου"/>
+
+            <column name="region_id" value="13"/>
+            <column name="district_id" value="72"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Ρεθύμνης"/>
+            <column name="region_id" value="13"/>
+            <column name="district_id" value="73"/>
+        </insert>
+        <insert tableName="counties">
+            <column name="name" value="Νομός Χανίων"/>
+            <column name="region_id" value="13"/>
+            <column name="district_id" value="74"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

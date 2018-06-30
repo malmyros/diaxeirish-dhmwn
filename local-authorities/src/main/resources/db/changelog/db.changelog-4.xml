@@ -1,0 +1,1800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd"
+                   logicalFilePath="liquibase/db.changelog.4.xml">
+    
+    <changeSet id="1" author="michail.almyros">
+        <createTable tableName="councils">
+            <column name="id" type="BIGSERIAL"/>
+            <column name="version" type="BIGINT" defaultValueNumeric="0"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="region_id" type="BIGSERIAL"/>
+            <column name="district_id" type="BIGSERIAL"/>
+            <column name="record_created_at" type="TIMESTAMP" defaultValueComputed="now()"/>
+            <column name="record_updated_at" type="TIMESTAMP" defaultValueComputed="now()"/>
+        </createTable>
+        
+        <addPrimaryKey tableName="councils" columnNames="id" constraintName="pk_councils"/>
+        <addForeignKeyConstraint baseTableName="councils"
+                                 baseColumnNames="region_id"
+                                 constraintName="fk_councils_regions_reference"
+                                 referencedTableName="regions"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="councils"
+                                 baseColumnNames="district_id"
+                                 constraintName="fk_councils_districts_reference"
+                                 referencedTableName="districts"
+                                 referencedColumnNames="id"/>
+        <addNotNullConstraint tableName="councils" columnName="version"/>
+        <addNotNullConstraint tableName="councils" columnName="record_created_at"/>
+        <addNotNullConstraint tableName="councils" columnName="record_updated_at"/>
+    </changeSet>
+    
+    <changeSet id="2" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Νευροκοπίου"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Προσοτσάνης"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Δράμας"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Παρανεστίου"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Δοξάτου"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+    
+    <changeSet id="3" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Παγγαίου"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Καβάλας"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Νέστου"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="2"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="4" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Θάσου"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="3"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="5" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Ξάνθης"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Τοπείρου"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μύκης"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Αβδήρων"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="4"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="6" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Κομοτηνής"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="5"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ιάσμου"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="5"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μαρωνεάις – Σαπών"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="5"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Αρριανών"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="5"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="7" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Σαμοθράκης"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="6"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Αλεξανδρούπολης"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="6"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σουφλίου"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="6"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Διδυμοτείχου"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="6"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ορεστιάδας"/>
+            <column name="region_id" valueNumeric="1"/>
+            <column name="district_id" valueNumeric="6"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="8" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αμπελοκήπων – Μενεμένης"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Βόλβης"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Δέλτα"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Θερμαικού"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Θέρμης"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Θεσσαλονίκης"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Καλαμαριάς"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ευόσμου"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Λαγκαδά"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Νεάπολης – Συκεών"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μελά"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Χορτιάτη"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Χαλκηδόνας"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="7"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ωραιόκαστρου"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="7"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="9" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αλεξάνδρειας"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="8"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Βέρεοιας"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="8"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Νάουσας"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="8"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="10" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Κιλκίς"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="9"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Παιονίας"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="9"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="11" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αλμωπίας"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="10"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Έδεσσας"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="10"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Πέλλας"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="10"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σκύδρας"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="10"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="12" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Δίου – Ολύμπου"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="11"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Κατερίνης"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="11"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Πύδνας – Κολίνδρου"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="11"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="13" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αμφίπολης"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="12"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Βισαλτίας"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="12"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Εμμανουήλ Παππά"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="12"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ηρακλείας"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="12"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Νέας Ζίχνης"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="12"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σερρών"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="12"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σιντικής"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="12"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="14" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αριστοτέλη"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="13"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Κασσάνδρας"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="13"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Νέας Προποντίδας"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="13"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Πολύγυρου"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="13"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σιθωνίας"/>
+            <column name="region_id" valueNumeric="2"/>
+            <column name="district_id" valueNumeric="13"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="15" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Κοζάνης"/>
+            <column name="region_id" valueNumeric="3"/>
+            <column name="district_id" valueNumeric="14"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Εορδαίας"/>
+            <column name="region_id" valueNumeric="3"/>
+            <column name="district_id" valueNumeric="14"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Βοίου"/>
+            <column name="region_id" valueNumeric="3"/>
+            <column name="district_id" valueNumeric="14"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σερβιών Βελβεντού"/>
+            <column name="region_id" valueNumeric="3"/>
+            <column name="district_id" valueNumeric="14"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="16" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Δεσκάτης"/>
+            <column name="region_id" valueNumeric="3"/>
+            <column name="district_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Γρεβενών"/>
+            <column name="region_id" valueNumeric="3"/>
+            <column name="district_id" valueNumeric="15"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="17" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Νεστόριου"/>
+            <column name="region_id" valueNumeric="3"/>
+            <column name="district_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ορεστίδος"/>
+            <column name="region_id" valueNumeric="3"/>
+            <column name="district_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Καστοριάς"/>
+            <column name="region_id" valueNumeric="3"/>
+            <column name="district_id" valueNumeric="16"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="18" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Πρεσπών"/>
+            <column name="region_id" valueNumeric="3"/>
+            <column name="district_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Φλώρινας"/>
+            <column name="region_id" valueNumeric="3"/>
+            <column name="district_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Αμυνταίου"/>
+            <column name="region_id" valueNumeric="3"/>
+            <column name="district_id" valueNumeric="17"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="19" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Τζουμέρκων"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Καραισκάκη"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Αρταίων"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Νικολάου Σκουφά"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="18"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="20" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Ηγουμενίτσας"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="19"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σουλίου"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="19"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Φιλιατών"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="19"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="21" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Δωδώνης"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ζίτσας"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Πωγωνίου"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Κόνιτσας"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μετσόβου"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Βόρειων Τζουμέρκων"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ζαγορίου"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ιωαννιτών"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="20"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="22" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Ζήρου"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Πάργας"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Πρέβεζας"/>
+            <column name="region_id" valueNumeric="4"/>
+            <column name="district_id" valueNumeric="21"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="23" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αργιθέας"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Καρδίτσας"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Λίμνης Πλαστήρα"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μουζακίου"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Παλαμά"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σοφάδων"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="22"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="24" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αγιάς"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="23"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ελασσόνας"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="23"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Κιλελέρ"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="23"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Λαρισαίων"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="23"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Τεμπών"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="23"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Τυρνάβου"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="23"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Φαρσάλων"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="23"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="25" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αλμυρού"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Βόλου"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ζαγοράς Μουρεσίου"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Νότιου Πηλίου"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ρήγα Φεραίου"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="24"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="26" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αλονήσου"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σκιάθου"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σκοπέλου"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="25"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="27" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Καλαμπάκας"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="26"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Πύλης"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="26"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Τρικαίων"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="26"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Φαρκαδόνας"/>
+            <column name="region_id" valueNumeric="5"/>
+            <column name="district_id" valueNumeric="26"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="28" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Κέρκυρας"/>
+            <column name="region_id" valueNumeric="6"/>
+            <column name="district_id" valueNumeric="27"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Παξών"/>
+            <column name="region_id" valueNumeric="6"/>
+            <column name="district_id" valueNumeric="27"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="29" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Ζακύνθου"/>
+            <column name="region_id" valueNumeric="6"/>
+            <column name="district_id" valueNumeric="28"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="30" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Ιθάκης"/>
+            <column name="region_id" valueNumeric="6"/>
+            <column name="district_id" valueNumeric="29"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="31" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Κεφαλλονιάς"/>
+            <column name="region_id" valueNumeric="6"/>
+            <column name="district_id" valueNumeric="30"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="32" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Λευκάδας"/>
+            <column name="region_id" valueNumeric="6"/>
+            <column name="district_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μαγνησίου"/>
+            <column name="region_id" valueNumeric="6"/>
+            <column name="district_id" valueNumeric="31"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="33" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αγρινίου"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ακτίου Βόνιτσας"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Αμφιλοχίας"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Θέρμου"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ιεράς Πόλης Μεσολογγίου"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ναυπακτίας"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ξηρόμερου"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="32"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="34" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αιγιαλείας"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Δυτικής Αχαίας"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ερυμάνθου"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Καλαβρύτων"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Πατρέων"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="33"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="35" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Ανδραβίδας Κυλλήνης"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ανδρίτσαινας Κρεστένων"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Αρχαίας Ολυμπίας"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ζαχάρως"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ήλιδας"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Πηνειού"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Πύργου"/>
+            <column name="region_id" valueNumeric="7"/>
+            <column name="district_id" valueNumeric="34"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="36" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αλιάρτου"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Διστόμου Αράχοβας Αντίκυρας"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Θηβαίων"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Λεβαδέων"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ορχομενού"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Τανάγρας"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="35"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="37" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αγράφων"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Καρπενησίου"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="37"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="38" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αμφίκλειας Ελατείας"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Δομοκού"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Λαμιέων"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Λοκρών"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μακρακώμης"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μώλου Αγίου Κωνσταντίνου"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Στυλίδας"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="38"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="39" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Δελφών"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Δωρίδος"/>
+            <column name="region_id" valueNumeric="8"/>
+            <column name="district_id" valueNumeric="39"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="40" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αθηναίων"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="40"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Βύρωνος"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="40"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Γαλατσίου"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="40"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Δάφνης Υμμητού"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="40"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ζωγράφου"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="40"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ηλιούπολης"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="40"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Καισαριανής"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="40"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Φιλαδέλφειας Χαλκηδόνας"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="40"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="41" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αγίου Δημητρίου"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="41"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Αλίμου"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="41"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Γλυφάδας"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="41"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ελληνικού Αργυρούπολης"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="41"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Καλλιθέας"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="41"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μοσχάτου Ταύρου"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="41"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Νέας Σμύρνης"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="41"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Παλαιού Φαλήρου"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="41"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="42" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αγίας Παρασκευής"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="42"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Αμαρουσιού"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="42"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Βριλησσίων"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="42"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ηρακλείου"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="42"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Κηφισιάς"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="42"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Λυκόβρυσης Πεύκης"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="42"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μεταμορφώσεως"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="42"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Νέας Ιωνίας"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="42"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Παπάγου Χολαργού"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="42"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Πεντέλης"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="42"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Φιλοθέης Ψυχικού"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="42"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Χαλανδρίου"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="42"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="43" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αγίας Βαρβάρας"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="43"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Αγίων Αναργύρων Καματερού"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="43"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Αιγάλεω"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="43"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ιλίου"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="43"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Περιστερίου"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="43"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Πετρούπολης"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="43"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Χαϊδαρίου"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="43"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="44" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Πειραιώς"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="44"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Νίκαιας Αγίου Ιωάννη Ρέντη"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="44"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Κορυδαλλού"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="44"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Κερατσινίου Δραπετσώνας"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="44"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Περάματος"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="44"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="45" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αγκιστρίου"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="45"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Αίγινας"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="45"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Κυθήρων"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="45"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Πόρου"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="45"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σαλαμίνας"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="45"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σπετσών"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="45"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Τροιζηνίας"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="45"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ύδρας"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="45"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="46" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Ασπροπύργου"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="46"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ελευσίνας"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="46"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μάνδρας Ειδυλλίας"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="46"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μεγαρέων"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="46"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Φυλής"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="46"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="47" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αχαρνών"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="47"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Βάρης Βούλας Βουλιαγμένης"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="47"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Διονύσου"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="47"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Κρωπίας"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="47"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Λαυρεωτικής"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="47"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μαραθώνος"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="47"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μαρκοπούλου Μεσογαίας"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="47"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Παιανίας"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="47"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Παλλήνης"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="47"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ραφήνας Πικερμίου"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="47"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σαρωνικού"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="47"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Αρτέμιδας Σπατών"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="47"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ωρωπού"/>
+            <column name="region_id" valueNumeric="9"/>
+            <column name="district_id" valueNumeric="47"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="48" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Άργους Μηκυνών"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="48"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Επιδαύρου"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="48"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ερμιονίδας"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="48"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ναυπλιέων"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="48"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="49" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Βόρειας Κυνουρίας"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="49"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Γορτυνίας"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="49"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μεγαλόπολης"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="49"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Νότιας Κυνουρίας"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="49"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Τρίπολης"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="49"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="50" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Βέλου Βόχας"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="50"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Κορινθίων"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="50"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Λουτρακίου Αγίων Θεοδώρων"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="50"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Νεμέας"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="50"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ξυλοκάστρου Ευρωστίνης"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="50"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σικυωνίων"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="50"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="51" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Ανατολικής Μάνης"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="51"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ελαφονήσου"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="51"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ευρώτα"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="51"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μονεμβασίας"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="51"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σπάρτης"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="51"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="52" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Δυτικής Μάνης"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="52"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Καλαμάτας"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="52"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μεσσήνης"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="52"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Οιχαλίας"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="52"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Πύλου Νέστορος"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="52"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Τριφυλίας"/>
+            <column name="region_id" valueNumeric="10"/>
+            <column name="district_id" valueNumeric="52"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="53" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Ικαρίας"/>
+            <column name="region_id" valueNumeric="11"/>
+            <column name="district_id" valueNumeric="53"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Φούρνων Κορσεών"/>
+            <column name="region_id" valueNumeric="11"/>
+            <column name="district_id" valueNumeric="53"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="54" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Λέσβου"/>
+            <column name="region_id" valueNumeric="11"/>
+            <column name="district_id" valueNumeric="54"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="55" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αγιού Ευστρατίου"/>
+            <column name="region_id" valueNumeric="11"/>
+            <column name="district_id" valueNumeric="55"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Λήμνου"/>
+            <column name="region_id" valueNumeric="11"/>
+            <column name="district_id" valueNumeric="55"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="56" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Σάμου"/>
+            <column name="region_id" valueNumeric="11"/>
+            <column name="district_id" valueNumeric="56"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="57" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Οινουσσών"/>
+            <column name="region_id" valueNumeric="11"/>
+            <column name="district_id" valueNumeric="57"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Χίου"/>
+            <column name="region_id" valueNumeric="11"/>
+            <column name="district_id" valueNumeric="57"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ψαρών"/>
+            <column name="region_id" valueNumeric="11"/>
+            <column name="district_id" valueNumeric="57"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="58" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Άνδρου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="58"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="59" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Κέας"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="59"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Κύθνου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="59"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="60" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Κιμώλου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="60"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μήλου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="60"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σερίφου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="60"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σίφνου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="60"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="61" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αμοργού"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="61"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Νάξου και Μικρών Κυκλάδων"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="61"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="62" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αντιπάρου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="62"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Πάρου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="62"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="63" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Ερμούπολης"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="63"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="64" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Τήνου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="64"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="65" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Ανάφης"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="65"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Θήρας"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="65"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ιητών"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="65"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σικίνου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="65"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Φολεγάνδρου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="65"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="66" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Καρπάθου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="67"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Κάσου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="67"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="67" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Κω"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="68"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Νισύρου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="68"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="68" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Μυκόνου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="69"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="69" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Μεγίστης"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="70"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ρόδου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="70"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σύμης"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="70"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Τήλου"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="70"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Χαλκής"/>
+            <column name="region_id" valueNumeric="12"/>
+            <column name="district_id" valueNumeric="70"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="70" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αχαρνών Αστερουσίων"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="71"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Βιάννου"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="71"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Γορτύνας"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="71"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ηρακλείου"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="71"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μαλεβιζίου"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="71"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μινώα Πεδιάδας"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="71"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Φαιστού"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="71"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Χερσοννήσου"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="71"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="71" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αγίου Νικολάου"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="72"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ιεράπετρας"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="72"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Οροπέδιου Λασιθίου"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="72"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σητείας"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="72"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="72" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αγίου Βασιλείου"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="73"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Αμαρίου"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="73"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ανωγείων"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="73"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Μυλοποτάμου"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="73"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Ρεθύμνης"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="73"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="73" author="michail.almyros">
+        <insert tableName="councils">
+            <column name="name" value="Αποκορώνου"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="74"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Γαύδου"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="74"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Καντάνου Σελίνου"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="74"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Κισσάμου"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="74"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Πλατανιά"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="74"/>
+        </insert>
+        <insert tableName="councils">
+            <column name="name" value="Σφακίων"/>
+            <column name="region_id" valueNumeric="13"/>
+            <column name="district_id" valueNumeric="74"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

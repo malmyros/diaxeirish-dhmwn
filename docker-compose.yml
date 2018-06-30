@@ -47,8 +47,6 @@ services:
       - POSTGRES_PASSWORD=
       - POSTGRES_INITDB_ARGS= --encoding=UTF-8
       - TZ=UTC
-    healthcheck:
-      test: exit 0
 
   local-authorities:
     container_name: local-authorities
