@@ -5,6 +5,7 @@ import PublicAuthorityPersonList from "../../components/PublicAuthorityPersonLis
 import {Route} from "react-router-dom";
 import SidebarLink from "../../components/sidebarLink";
 import api from '../../api';
+import CouncilProfile from "../../components/councilProfile";
 
 class Council extends Component {
 
@@ -12,10 +13,7 @@ class Council extends Component {
         super(props);
 
         this.state = {
-            data: {
-                id: null,
-                name: ""
-            }
+            data: {}
         };
     }
 
@@ -33,7 +31,7 @@ class Council extends Component {
     }
 
     render() {
-        const { name } = this.state.data;
+        const { name, description } = this.state.data;
         const baseUrl = this.props.match.url;
         let urls = [
             {name: "Δήμος " + name, to: baseUrl},
@@ -55,18 +53,7 @@ class Council extends Component {
                 <div className="container pt-4">
                     <div className="row">
                         <div className="col-md-12">
-                            <div className="card box-shadow p-3 d-flex align-items-center">
-                                <div className="m-3 bg-light border" style={{
-                                    height: "120px",
-                                    width: "120px",
-                                }}/>
-                                <div className="col-md-6 mx-auto text-center">
-                                    <strong className="text-gray-dark">Δήμος {name}</strong>
-                                    <p className="text-muted">Καλωσορίσατε στο διαδικτυακό τόπο του Δήμου Σπάτων –
-                                        Αρτέμιδας, που ως ενιαίος πλέον χώρος, καλείται να δημιουργήσει μεγαλύτερα
-                                        περιθώρια για ανάπτυξη και κοινωνική πρόοδο.</p>
-                                </div>
-                            </div>
+                            <CouncilProfile name={name} description={description}/>
                         </div>
                     </div>
                 </div>

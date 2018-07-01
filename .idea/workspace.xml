@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1fd17c1-3cf5-4262-b23e-b36b14aa3743" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/configuration/WebConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/michail_almyros.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/michail_almyros.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/src/components/councilProfile/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/CouncilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/CouncilController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/CountyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/CountyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/DistrictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/DistrictController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/RegionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/RegionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/exceptions/CouncilNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/exceptions/CouncilNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/models/Council.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/models/Council.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/repositories/CouncilRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/repositories/CouncilRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/CouncilService.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/CouncilService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/CountyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/CountyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/DistrictService.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/DistrictService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/RegionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/RegionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/resources/db/changelog/db.changelog-3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/resources/db/changelog/db.changelog-3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/api/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-service/src/components/sidebarLink/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/components/sidebarLink/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-service/src/pages/council/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/pages/council/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/src/pages/home/components/districts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/pages/home/components/districts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/src/pages/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/pages/home/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/local-authorities/.gradle/" />
     <ignored path="$PROJECT_DIR$/local-authorities/build/" />
@@ -105,24 +89,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="District.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/models/District.java">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web-service/src/components/councilProfile/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+            <state relative-caret-position="405">
+              <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Council.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/models/Council.java">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web-service/src/components/sidebarLink/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+            <state relative-caret-position="255">
+              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#688#689#0" expanded="true" />
-                <element signature="e#720#721#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web-service/src/components/announcement/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="18" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,7 +128,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web-service/src/pages/council/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="225">
+              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -699,7 +697,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/county/CountyRepository.java" />
         <option value="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/county/CountyService.java" />
         <option value="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/county/County.java" />
         <option value="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/county/CountyController.java" />
@@ -732,7 +729,6 @@
         <option value="$PROJECT_DIR$/local-authorities/src/main/resources/db/changelog/db.changelog-3.xml" />
         <option value="$PROJECT_DIR$/web-service/src/pages/home/components/counties/index.js" />
         <option value="$PROJECT_DIR$/web-service/src/pages/home/components/districts/index.js" />
-        <option value="$PROJECT_DIR$/web-service/src/components/sidebarLink/index.js" />
         <option value="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/RegionController.java" />
         <option value="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/RegionService.java" />
         <option value="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/DistrictService.java" />
@@ -750,6 +746,8 @@
         <option value="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/models/District.java" />
         <option value="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/models/Council.java" />
         <option value="$PROJECT_DIR$/web-service/src/pages/council/index.js" />
+        <option value="$PROJECT_DIR$/web-service/src/components/sidebarLink/index.js" />
+        <option value="$PROJECT_DIR$/web-service/src/components/councilProfile/index.js" />
       </list>
     </option>
   </component>
@@ -1085,7 +1083,7 @@
               <item name="diaxeirish-dhmwn" type="462c0819:PsiDirectoryNode" />
               <item name="web-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="diaxeirish-dhmwn" type="b2602c69:ProjectViewProjectNode" />
@@ -1093,6 +1091,15 @@
               <item name="web-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="announcement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diaxeirish-dhmwn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="diaxeirish-dhmwn" type="462c0819:PsiDirectoryNode" />
+              <item name="web-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="councilProfile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="diaxeirish-dhmwn" type="b2602c69:ProjectViewProjectNode" />
@@ -1116,14 +1123,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="council" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="diaxeirish-dhmwn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="diaxeirish-dhmwn" type="462c0819:PsiDirectoryNode" />
-              <item name="web-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="diaxeirish-dhmwn" type="b2602c69:ProjectViewProjectNode" />
@@ -1413,7 +1412,7 @@
       <workItem from="1530044744198" duration="6440000" />
       <workItem from="1530220196411" duration="171000" />
       <workItem from="1530354797070" duration="13136000" />
-      <workItem from="1530437488339" duration="10690000" />
+      <workItem from="1530437488339" duration="11708000" />
     </task>
     <task id="LOCAL-00001" summary="Update the text in the footer links">
       <created>1529236972562</created>
@@ -1485,7 +1484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1530440359877</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fixed CORS&#10;&#10;Fixed an issue with the requests where the council wouldn't pass&#10;cors.&#10;&#10;Fixed council request to get data by council">
+      <created>1530472490604</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1530472490604</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1521,7 +1527,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136112000" />
+    <option name="totallyTimeSpent" value="137130000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="726" extended-state="0" />
@@ -1576,7 +1582,8 @@
     <MESSAGE value="Added change set for councils" />
     <MESSAGE value="Added new model, service, controller, repository, exception and tests for&#10;councils." />
     <MESSAGE value="Fixed OneToMany and ManyToOne mappings in the district and council&#10;entity.&#10;&#10;Enabled CORS for the rest points&#10;&#10;Added apisauce and requested data from the districts to map in&#10;the home page." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed OneToMany and ManyToOne mappings in the district and council&#10;entity.&#10;&#10;Enabled CORS for the rest points&#10;&#10;Added apisauce and requested data from the districts to map in&#10;the home page." />
+    <MESSAGE value="Fixed CORS&#10;&#10;Fixed an issue with the requests where the council wouldn't pass&#10;cors.&#10;&#10;Fixed council request to get data by council" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed CORS&#10;&#10;Fixed an issue with the requests where the council wouldn't pass&#10;cors.&#10;&#10;Fixed council request to get data by council" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1584,20 +1591,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://1108f937-7701-4716-b5be-bb7eeac6b51e/database/local_authorities_db/schema/public/table/regions">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/local-authorities/src/main/resources/db/db.changelog-master.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/local-authorities/src/main/resources/db/changelog/db.changelog-4.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1742,16 +1735,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-service/src/components/sidebarLink/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1963,12 +1946,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web-service/src/pages/council/index.js">
+    <entry file="file://$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/models/District.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="390">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1984,10 +1965,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/models/District.java">
+    <entry file="file://$PROJECT_DIR$/web-service/src/components/announcement/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="18" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-service/src/components/sidebarLink/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-service/src/pages/council/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-service/src/components/councilProfile/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -10,4 +10,14 @@ const SidebarLink = (props) => (
     </li>
 );
 
+SidebarLink.propTypes = {
+    name: PropTypes.string,
+    to: PropTypes.string
+};
+
+SidebarLink.defaultProps = {
+    name: "",
+    to: "/"
+};
+
 export default SidebarLink;
