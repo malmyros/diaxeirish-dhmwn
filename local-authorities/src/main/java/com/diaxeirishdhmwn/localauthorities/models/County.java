@@ -23,15 +23,10 @@ public class County {
 
     private String name;
 
-    private Long regionId;
-    private Long districtId;
-
     public County() {
     }
 
-    public County(String name, Long regionId, Long districtId) {
+    public County(String name) {
         this.name = name;
-        this.regionId = regionId;
-        this.districtId = districtId;
     }
 }

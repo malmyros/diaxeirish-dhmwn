@@ -2,9 +2,11 @@ package com.diaxeirishdhmwn.localauthorities.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -22,6 +24,10 @@ public class District {
     private Integer version;
 
     private String name;
+
+    @OneToMany(mappedBy = "district", fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<Council> councils;
 
     public District() {
     }

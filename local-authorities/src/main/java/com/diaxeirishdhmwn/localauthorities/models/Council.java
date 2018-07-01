@@ -1,5 +1,6 @@
 package com.diaxeirishdhmwn.localauthorities.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
@@ -23,15 +24,15 @@ public class Council {
 
     private String name;
 
-    private Long regionId;
-    private Long districtId;
+    @ManyToOne
+    @JoinColumn(name = "district_id")
+    @JsonBackReference
+    private District district;
 
     public Council() {
     }
 
-    public Council(String name, Long regionId, Long districtId) {
+    public Council(String name) {
         this.name = name;
-        this.regionId = regionId;
-        this.districtId = districtId;
     }
 }

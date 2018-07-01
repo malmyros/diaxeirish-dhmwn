@@ -1,101 +1,28 @@
 import React, {Component} from 'react';
 import Layout from "../../components/layout";
 import {Link} from "react-router-dom";
-import Counties from "./components/counties";
-
-function randomNumber() {
-    return Math.floor((Math.random() * 10) + 1);
-}
-
-const counties = [
-    {
-        id: 0,
-        name: "Αττικής",
-        councils: [
-            {
-                id: 0,
-                name: "Αχαρνών",
-                issueCount: randomNumber(),
-                volunteerCount: randomNumber()
-            },
-            {
-                id: 1,
-                name: "Βάρης - Βούλας - Βουλιαγμένης",
-                issueCount: randomNumber(),
-                volunteerCount: randomNumber()
-            },
-            {
-                id: 2,
-                name: "Διονύσου",
-                issueCount: randomNumber(),
-                volunteerCount: randomNumber()
-            },
-            {
-                id: 3,
-                name: "Κρωπίας",
-                issueCount: randomNumber(),
-                volunteerCount: randomNumber()
-            },
-            {
-                id: 4,
-                name: "Λαυρεωτικής",
-                issueCount: randomNumber(),
-                volunteerCount: randomNumber()
-            },
-            {
-                id: 5,
-                name: "Μαραθώνος",
-                issueCount: randomNumber(),
-                volunteerCount: randomNumber()
-            },
-            {
-                id: 6,
-                name: "Μαρκοπούλου Μεσογαίας",
-                issueCount: randomNumber(),
-                volunteerCount: randomNumber()
-            },
-            {
-                id: 7,
-                name: "Παιανίας",
-                issueCount: randomNumber(),
-                volunteerCount: randomNumber()
-            },
-            {
-                id: 8,
-                name: "Παλλήνης",
-                issueCount: randomNumber(),
-                volunteerCount: randomNumber()
-            },
-            {
-                id: 9,
-                name: "Ραφήνας - Πικερμίου",
-                issueCount: randomNumber(),
-                volunteerCount: randomNumber()
-            },
-            {
-                id: 10,
-                name: "Σαρωνικού",
-                issueCount: randomNumber(),
-                volunteerCount: randomNumber()
-            },
-            {
-                id: 11,
-                name: "Σπάτων - Αρτέμιδος",
-                issueCount: randomNumber(),
-                volunteerCount: randomNumber()
-            },
-            {
-                id: 12,
-                name: "Ωρωπού",
-                issueCount: randomNumber(),
-                volunteerCount: randomNumber()
-            }
-        ]
-    }
-];
-
+import Counties from "./components/districts";
+import api from '../../api';
 
 class Home extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            districts: []
+        };
+    }
+
+    componentDidMount() {
+        api.get("/districts")
+            .then((response) => {
+                this.setState({
+                    districts: response.data
+                });
+            });
+    }
+
     render() {
         return (
             <Layout title="Διαχείριση Δήμων | Ό ποιό έυκολος τρόπος για να γίνεται ενεργός πολίτης" description="Διαχειριστείτε τα ζητήματα του δήμου σας εύκολα και γρήγορα">
@@ -115,7 +42,7 @@ class Home extends Component {
                 </div>
                 <div className="album py-2">
                     <div className="container">
-                        <Counties counties={counties}/>
+                        <Counties districts={this.state.districts}/>
                     </div>
                 </div>
             </Layout>

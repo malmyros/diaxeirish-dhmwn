@@ -6,6 +6,7 @@
     "fsevents": "*"
   },
   "dependencies": {
+    "apisauce": "^0.15.2",
     "lodash": "^4.17.10",
     "prop-types": "^15.6.1",
     "react": "^16.4.1",
