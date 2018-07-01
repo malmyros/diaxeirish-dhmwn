@@ -5,7 +5,6 @@ import com.diaxeirishdhmwn.localauthorities.services.CountyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/counties")
 public class CountyController {
@@ -18,8 +17,8 @@ public class CountyController {
         return countyService.findAllCounties();
     }
 
-    @GetMapping("/{county_id}")
-    public County findCountyById(@PathVariable long councilId) {
-        return countyService.findCountyById(councilId);
+    @GetMapping("/{countyId}")
+    public County findCountyById(@PathVariable Long countyId) {
+        return countyService.findCountyById(countyId);
     }
 }

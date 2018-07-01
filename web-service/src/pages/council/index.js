@@ -4,12 +4,39 @@ import Announcement from "../../components/announcement";
 import PublicAuthorityPersonList from "../../components/PublicAuthorityPersonList";
 import {Route} from "react-router-dom";
 import SidebarLink from "../../components/sidebarLink";
+import api from '../../api';
 
 class Council extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            data: {
+                id: null,
+                name: ""
+            }
+        };
+    }
+
+    componentDidMount() {
+        const { match: { params } } = this.props;
+        api.get("/councils/" + params.id)
+            .then((response) => {
+                this.setState({
+                    data: response.data
+                });
+            })
+            .catch((error) => {
+                console.error("Error", error);
+            });
+    }
+
     render() {
+        const { name } = this.state.data;
         const baseUrl = this.props.match.url;
         let urls = [
-            {name: "Δήμος Σπάτων - Αρτέμιδος", to: baseUrl},
+            {name: "Δήμος " + name, to: baseUrl},
             {name: "Δημοτική αρχή", to: baseUrl + "/dhmotikh-arxh"},
             {name: "Δημότες", to: baseUrl + "/dhmotes"},
             {name: "Εθελοντισμός", to: baseUrl + "/ethelontismos"},
@@ -24,7 +51,7 @@ class Council extends Component {
         });
 
         return (
-            <Layout title="Δήμος Αχαρνών" className="bg-light">
+            <Layout title={name} className="bg-light">
                 <div className="container pt-4">
                     <div className="row">
                         <div className="col-md-12">
@@ -34,7 +61,7 @@ class Council extends Component {
                                     width: "120px",
                                 }}/>
                                 <div className="col-md-6 mx-auto text-center">
-                                    <strong className="text-gray-dark">Δήμος Σπάτων - Αρτέμιδος</strong>
+                                    <strong className="text-gray-dark">Δήμος {name}</strong>
                                     <p className="text-muted">Καλωσορίσατε στο διαδικτυακό τόπο του Δήμου Σπάτων –
                                         Αρτέμιδας, που ως ενιαίος πλέον χώρος, καλείται να δημιουργήσει μεγαλύτερα
                                         περιθώρια για ανάπτυξη και κοινωνική πρόοδο.</p>
@@ -61,7 +88,7 @@ class Council extends Component {
                         <div className="col-md-9">
                             <div className="row">
                                 <Route exact path={"/dhmos/:id"} render={() => (
-                                    <p>Δήμος Σπατών - Αρτέμιδος</p>
+                                    <p>Δήμος {name}</p>
                                 )}/>
                                 <Route path={"/dhmos/:id/dhmotikh-arxh"} render={() => (
                                     <PublicAuthorityPersonList/>

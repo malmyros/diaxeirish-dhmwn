@@ -25,7 +25,6 @@ public class Council {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "district_id")
     @JsonBackReference
     private District district;
 

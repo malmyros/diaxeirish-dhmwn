@@ -5,7 +5,6 @@ import com.diaxeirishdhmwn.localauthorities.services.DistrictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/districts")
 public class DistrictController {
@@ -19,7 +18,7 @@ public class DistrictController {
     }
 
     @GetMapping("/{districtId}")
-    public District findDistrictById(@PathVariable long districtId) {
+    public District findDistrictById(@PathVariable Long districtId) {
         return districtService.findDistrictById(districtId);
     }
 }

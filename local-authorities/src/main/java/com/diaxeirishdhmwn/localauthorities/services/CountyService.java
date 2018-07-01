@@ -20,7 +20,7 @@ public class CountyService {
         return countyRepository.findAll();
     }
 
-    public County findCountyById(long countyId) {
+    public County findCountyById(Long countyId) {
         return Optional.of(countyRepository.findById(countyId))
                 .get()
                 .orElseThrow(() -> new CountyNotFoundException("County not found. ID: " + countyId));

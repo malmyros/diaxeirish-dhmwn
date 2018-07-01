@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Layout from "../../components/layout";
 import {Link} from "react-router-dom";
-import Counties from "./components/districts";
+import Districts from "./components/districts";
 import api from '../../api';
 
 class Home extends Component {
@@ -42,7 +42,7 @@ class Home extends Component {
                 </div>
                 <div className="album py-2">
                     <div className="container">
-                        <Counties districts={this.state.districts}/>
+                        <Districts districts={this.state.districts}/>
                     </div>
                 </div>
             </Layout>

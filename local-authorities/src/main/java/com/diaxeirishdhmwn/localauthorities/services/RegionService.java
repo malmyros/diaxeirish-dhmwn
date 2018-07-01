@@ -20,7 +20,7 @@ public class RegionService {
         return regionRepository.findAll();
     }
 
-    public Region findRegionById(long regionId) {
+    public Region findRegionById(Long regionId) {
         return Optional.of(regionRepository.findById(regionId))
                 .get()
                 .orElseThrow(() -> new RegionNoFoundException("Region not found. ID: " + regionId));

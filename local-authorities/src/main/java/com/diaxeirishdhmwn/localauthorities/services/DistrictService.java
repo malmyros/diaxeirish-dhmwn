@@ -20,7 +20,7 @@ public class DistrictService {
         return districtRepository.findAll();
     }
 
-    public District findDistrictById(long districtId) {
+    public District findDistrictById(Long districtId) {
         return Optional.of(districtRepository.findById(districtId))
                 .get()
                 .orElseThrow(() -> new DistrictNotFoundException("District not found. Id: " + districtId));

@@ -3,9 +3,11 @@ package com.diaxeirishdhmwn.localauthorities.controllers;
 import com.diaxeirishdhmwn.localauthorities.models.Council;
 import com.diaxeirishdhmwn.localauthorities.services.CouncilService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/councils")
 public class CouncilController {
@@ -18,8 +20,8 @@ public class CouncilController {
         return councilService.findAllCouncils();
     }
 
-    @GetMapping("/{council_id")
-    public Council findCouncilById(@PathVariable long councilId) {
+    @GetMapping("/{councilId}")
+    public Council findCouncilById(@PathVariable Long councilId) {
         return councilService.findCouncilById(councilId);
     }
 }

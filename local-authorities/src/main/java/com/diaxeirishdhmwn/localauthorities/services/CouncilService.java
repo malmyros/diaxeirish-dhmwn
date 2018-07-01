@@ -16,14 +16,14 @@ public class CouncilService {
     @Autowired
     private CouncilRepository councilRepository;
 
-    public Iterable<Council> findAllCouncils()
-    {
+    public Iterable<Council> findAllCouncils() {
         return councilRepository.findAll();
     }
 
-    public Council findCouncilById(long councilId) {
+    public Council findCouncilById(Long councilId) {
         return Optional.of(councilRepository.findById(councilId))
                 .get()
                 .orElseThrow(() -> new CouncilNotFoundException("Council not found. ID: " + councilId));
     }
+
 }
