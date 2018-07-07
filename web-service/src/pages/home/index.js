@@ -17,15 +17,21 @@ class Home extends Component {
     componentDidMount() {
         api.get("/districts")
             .then((response) => {
-                this.setState({
-                    districts: response.data
-                });
+                if (response.ok) {
+                    this.setState({
+                        districts: response.data
+                    });
+                }
+            })
+            .catch((error) => {
+                console.error("Error", error);
             });
     }
 
     render() {
         return (
-            <Layout title="Διαχείριση Δήμων | Ό ποιό έυκολος τρόπος για να γίνεται ενεργός πολίτης" description="Διαχειριστείτε τα ζητήματα του δήμου σας εύκολα και γρήγορα">
+            <Layout title="Διαχείριση Δήμων | Ό ποιό έυκολος τρόπος για να γίνεται ενεργός πολίτης"
+                    description="Διαχειριστείτε τα ζητήματα του δήμου σας εύκολα και γρήγορα">
                 <div className="position-relative overflow-hidden p-3 p-md-5 text-center bg-light border-bottom">
                     <div className="col-md-6 p-lg-5 mx-auto my-5">
                         <h1 className="display-5 font-weight-normal">Διαχείριση Δήμων</h1>

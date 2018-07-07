@@ -5,7 +5,12 @@ import PublicAuthorityPersonList from "../../components/PublicAuthorityPersonLis
 import {Route} from "react-router-dom";
 import SidebarLink from "../../components/sidebarLink";
 import api from '../../api';
-import CouncilProfile from "../../components/councilProfile";
+import CouncilProfile from './components/councilProfile'
+import Issues from "./components/issues";
+import VolunteerActs from "./components/volunteerActs";
+import CitizenList from "../../components/citizenList";
+import FinancialDataTable from "./components/financialDataTable";
+import {CartesianGrid, Legend, Line, LineChart, XAxis, YAxis} from "recharts";
 
 class Council extends Component {
 
@@ -18,7 +23,8 @@ class Council extends Component {
     }
 
     componentDidMount() {
-        const { match: { params } } = this.props;
+        const {match: {params}} = this.props;
+
         api.get("/councils/" + params.id)
             .then((response) => {
                 this.setState({
@@ -31,10 +37,12 @@ class Council extends Component {
     }
 
     render() {
-        const { name, description } = this.state.data;
+        let {name, description} = this.state.data;
+        name = "Δήμος " + name;
+
         const baseUrl = this.props.match.url;
         let urls = [
-            {name: "Δήμος " + name, to: baseUrl},
+            {name: name, to: baseUrl},
             {name: "Δημοτική αρχή", to: baseUrl + "/dhmotikh-arxh"},
             {name: "Δημότες", to: baseUrl + "/dhmotes"},
             {name: "Εθελοντισμός", to: baseUrl + "/ethelontismos"},
@@ -47,6 +55,16 @@ class Council extends Component {
                 <SidebarLink key={url.to} {...url}/>
             )
         });
+
+        const data = [
+            {name: 'Ιανουάριος', uv: 4000, pv: 2400, kd: 1990, amt: 2400},
+            {name: 'Φεβρουάριος', uv: 3000, pv: 1398, kd: 2490, amt: 2210},
+            {name: 'Μάρτιος', uv: 2000, pv: 9800, kd: 1600, amt: 2290},
+            {name: 'Απρίλιος', uv: 2780, pv: 3908, kd: 500, amt: 2000},
+            {name: 'Μάιος', uv: 1890, pv: 4800, kd: 3189, amt: 2181},
+            {name: 'Ιούνιος', uv: 2390, pv: 3800, kd: 5890, amt: 2500},
+            {name: 'Ιούλιος', uv: 3490, pv: 4300, kd: 4917, amt: 2100},
+        ];
 
         return (
             <Layout title={name} className="bg-light">
@@ -75,22 +93,55 @@ class Council extends Component {
                         <div className="col-md-9">
                             <div className="row">
                                 <Route exact path={"/dhmos/:id"} render={() => (
-                                    <p>Δήμος {name}</p>
+                                    <strong className="text-gray-dark">{name}</strong>
                                 )}/>
                                 <Route path={"/dhmos/:id/dhmotikh-arxh"} render={() => (
                                     <PublicAuthorityPersonList/>
                                 )}/>
                                 <Route path={"/dhmos/:id/dhmotes"} render={() => (
-                                    <p>Δημότες</p>
+                                    <CitizenList/>
                                 )}/>
                                 <Route path={"/dhmos/:id/ethelontismos"} render={() => (
-                                    <p>Εθελοντισμός</p>
+                                    <VolunteerActs/>
                                 )}/>
                                 <Route path={"/dhmos/:id/zhthmata"} render={() => (
-                                    <p>Ζητήματα</p>
+                                    <Issues/>
                                 )}/>
                                 <Route path={"/dhmos/:id/oikonomika-stoixeia"} render={() => (
-                                    <p>Οικονομικά στοιχεία</p>
+                                    <div className="col-md-12">
+                                        <div className="card p-3">
+                                            <h4 className="mb-4">Απολογισμός</h4>
+                                            <div
+                                                className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-2">
+                                                <button
+                                                    className="btn btn-sm btn-outline-secondary dropdown-toggle">
+                                                    Ιούλιος 2018
+                                                </button>
+                                                <div className="btn-toolbar mb-2 mb-md-0">
+                                                    <div className="btn-group mr-2">
+                                                        <button
+                                                            className="btn btn-sm btn-outline-secondary">Κοινοποιήστε
+                                                        </button>
+                                                        <button className="btn btn-sm btn-outline-secondary">Εξαγωγή
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <LineChart className="mt-3 mb-3" width={780} height={300} data={data}>
+                                                <Legend verticalAlign="top" height={48}/>
+                                                <XAxis dataKey="name"/>
+                                                <YAxis/>
+                                                <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
+                                                <Line name="Προϋπολογισθέντα" type="monotone" dataKey="pv"
+                                                      stroke="#8884d8"/>
+                                                <Line name="Βεβαιωθέντα" type="monotone" dataKey="uv"
+                                                      stroke="#82ca9d"/>
+                                                <Line name="Εισπραχθέντα" type="monotone" dataKey="kd"
+                                                      stroke="#17a2b8"/>
+                                            </LineChart>
+                                            <FinancialDataTable/>
+                                        </div>
+                                    </div>
                                 )}/>
                             </div>
                         </div>
@@ -99,6 +150,6 @@ class Council extends Component {
             </Layout>
         )
     }
-};
+}
 
 export default Council;
