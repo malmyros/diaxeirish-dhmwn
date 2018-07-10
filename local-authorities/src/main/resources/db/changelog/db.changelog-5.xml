@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd"
+                   logicalFilePath="liquibase/db.changelog-5.xml">
+
+    <changeSet id="1" author="michail.almyros">
+        <createTable tableName="users">
+            <column name="id" type="BIGSERIAL"/>
+            <column name="version" type="BIGINT" defaultValueNumeric="0"/>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="email_verified_at" type="TIMESTAMP WITH TIME ZONE"/>
+            <column name="phone_number" type="VARCHAR(255)"/>
+            <column name="password_hash" type="VARCHAR(255)"/>
+            <column name="password_reset_token" type="VARCHAR(255)"/>
+            <column name="password_reset_token_expires_at" type="TIMESTAMP WITH TIME ZONE"/>
+            <column name="last_login_at" type="TIMESTAMP WITH TIME ZONE"/>
+            <column name="last_login_ip" type="VARCHAR(45)"/>
+            <column name="record_created_at" type="TIMESTAMP" defaultValueComputed="now()"/>
+            <column name="record_updated_at" type="TIMESTAMP" defaultValueComputed="now()"/>
+        </createTable>
+        
+        <addPrimaryKey tableName="users" columnNames="id" constraintName="pk_users"/>
+        <addUniqueConstraint tableName="users" columnNames="email" constraintName="ux_users_email"/>
+        <addNotNullConstraint tableName="users" columnName="version"/>
+        <addNotNullConstraint tableName="users" columnName="record_created_at"/>
+        <addNotNullConstraint tableName="users" columnName="record_updated_at"/>
+    </changeSet>
+
+</databaseChangeLog>

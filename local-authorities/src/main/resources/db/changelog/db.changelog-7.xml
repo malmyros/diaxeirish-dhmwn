@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd"
+                   logicalFilePath="liquibase/db.changelog-7.xml">
+
+    <changeSet id="1" author="michail.almyros">
+        <createTable tableName="issue_votes">
+            <column name="id" type="BIGSERIAL"/>
+            <column name="version" type="BIGINT" defaultValueNumeric="0"/>
+            <column name="user_id" type="BIGSERIAL"/>
+            <column name="issue_id" type="BIGSERIAL"/>
+            <column name="up_vote" type="BOOLEAN"/>
+            <column name="record_created_at" type="TIMESTAMP" defaultValueComputed="now()"/>
+            <column name="record_updated_at" type="TIMESTAMP" defaultValueComputed="now()"/>
+        </createTable>
+        <addPrimaryKey tableName="issue_votes" columnNames="id" constraintName="pk_issue_votes"/>
+        <addForeignKeyConstraint baseTableName="issue_votes"
+                                 baseColumnNames="user_id"
+                                 constraintName="fk_issue_votes_users_reference"
+                                 referencedTableName="users"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="issue_votes"
+                                 baseColumnNames="issue_id"
+                                 constraintName="fk_issue_votes_issues_reference"
+                                 referencedTableName="issues"
+                                 referencedColumnNames="id"/>
+        <addNotNullConstraint tableName="issues" columnName="version"/>
+        <addNotNullConstraint tableName="issue_votes" columnName="record_created_at"/>
+        <addNotNullConstraint tableName="issue_votes" columnName="record_updated_at"/>
+    </changeSet>
+
+</databaseChangeLog>

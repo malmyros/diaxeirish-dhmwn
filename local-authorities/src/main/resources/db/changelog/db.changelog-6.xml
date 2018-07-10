@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd"
+                   logicalFilePath="liquibase/db.changelog-6.xml">
+
+    <changeSet id="1" author="michail.almyros">
+        <createTable tableName="issues">
+            <column name="id" type="BIGSERIAL"/>
+            <column name="version" type="BIGINT" defaultValueNumeric="0"/>
+            <column name="short_description" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(4000)"/>
+            <column name="creator_id" type="BIGSERIAL"/>
+            <column name="council_id" type="BIGSERIAL"/>
+            <column name="record_created_at" type="TIMESTAMP" defaultValueComputed="now()"/>
+            <column name="record_updated_at" type="TIMESTAMP" defaultValueComputed="now()"/>
+        </createTable>
+        
+        <addPrimaryKey tableName="issues" columnNames="id" constraintName="pk_issues"/>
+        <addForeignKeyConstraint baseTableName="issues"
+                                 baseColumnNames="creator_id"
+                                 constraintName="fk_issues_users_reference"
+                                 referencedTableName="users"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="issues"
+                                 baseColumnNames="council_id"
+                                 constraintName="fk_issues_councils_reference"
+                                 referencedTableName="councils"
+                                 referencedColumnNames="id"/>
+        <addNotNullConstraint tableName="issues" columnName="version"/>
+        <addNotNullConstraint tableName="issues" columnName="record_created_at"/>
+        <addNotNullConstraint tableName="issues" columnName="record_updated_at"/>
+    </changeSet>
+
+</databaseChangeLog>
