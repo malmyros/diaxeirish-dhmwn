@@ -1,5 +1,6 @@
-package com.diaxeirishdhmwn.localauthorities.models;
+package com.diaxeirishdhmwn.localauthorities.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
@@ -8,12 +9,12 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "counties")
+@Table(name = "councils")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class County {
+public class Council {
 
     @Id
-    @SequenceGenerator(name = "seq_generator", sequenceName = "county_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "seq_generator", sequenceName = "council_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "seq_generator")
     private Long id;
 
@@ -23,10 +24,14 @@ public class County {
 
     private String name;
 
-    public County() {
+    @ManyToOne
+    @JsonBackReference
+    private District district;
+
+    public Council() {
     }
 
-    public County(String name) {
+    public Council(String name) {
         this.name = name;
     }
 }

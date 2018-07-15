@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Citizen = (props) => {
-    const {id, firstName, lastName} = props;
+    const {firstName, lastName} = props;
 
     return (
         <div className="col-md-4">

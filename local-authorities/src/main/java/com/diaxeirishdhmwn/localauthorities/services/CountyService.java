@@ -2,7 +2,7 @@ package com.diaxeirishdhmwn.localauthorities.services;
 
 import com.diaxeirishdhmwn.localauthorities.exceptions.CountyNotFoundException;
 import com.diaxeirishdhmwn.localauthorities.repositories.CountyRepository;
-import com.diaxeirishdhmwn.localauthorities.models.County;
+import com.diaxeirishdhmwn.localauthorities.entities.County;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

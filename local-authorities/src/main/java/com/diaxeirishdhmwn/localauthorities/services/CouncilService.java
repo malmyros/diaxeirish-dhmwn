@@ -1,7 +1,7 @@
 package com.diaxeirishdhmwn.localauthorities.services;
 
 import com.diaxeirishdhmwn.localauthorities.exceptions.CouncilNotFoundException;
-import com.diaxeirishdhmwn.localauthorities.models.Council;
+import com.diaxeirishdhmwn.localauthorities.entities.Council;
 import com.diaxeirishdhmwn.localauthorities.repositories.CouncilRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

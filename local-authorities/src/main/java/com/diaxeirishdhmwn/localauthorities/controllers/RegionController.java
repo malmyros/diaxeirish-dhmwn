@@ -1,6 +1,6 @@
 package com.diaxeirishdhmwn.localauthorities.controllers;
 
-import com.diaxeirishdhmwn.localauthorities.models.Region;
+import com.diaxeirishdhmwn.localauthorities.entities.Region;
 import com.diaxeirishdhmwn.localauthorities.services.RegionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

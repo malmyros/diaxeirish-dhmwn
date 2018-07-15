@@ -1,6 +1,6 @@
 package com.diaxeirishdhmwn.localauthorities.controllers;
 
-import com.diaxeirishdhmwn.localauthorities.models.Council;
+import com.diaxeirishdhmwn.localauthorities.entities.Council;
 import com.diaxeirishdhmwn.localauthorities.services.CouncilService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

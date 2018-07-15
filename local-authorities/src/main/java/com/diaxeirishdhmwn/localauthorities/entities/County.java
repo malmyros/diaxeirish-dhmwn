@@ -1,4 +1,4 @@
-package com.diaxeirishdhmwn.localauthorities.models;
+package com.diaxeirishdhmwn.localauthorities.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -8,12 +8,12 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "regions")
+@Table(name = "counties")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Region {
+public class County {
 
     @Id
-    @SequenceGenerator(name = "seq_generator", sequenceName = "regions_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "seq_generator", sequenceName = "county_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "seq_generator")
     private Long id;
 
@@ -23,10 +23,10 @@ public class Region {
 
     private String name;
 
-    public Region() {
+    public County() {
     }
 
-    public Region(String name) {
+    public County(String name) {
         this.name = name;
     }
 }

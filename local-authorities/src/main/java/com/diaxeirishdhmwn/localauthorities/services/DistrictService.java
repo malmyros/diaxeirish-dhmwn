@@ -1,7 +1,7 @@
 package com.diaxeirishdhmwn.localauthorities.services;
 
 import com.diaxeirishdhmwn.localauthorities.exceptions.DistrictNotFoundException;
-import com.diaxeirishdhmwn.localauthorities.models.District;
+import com.diaxeirishdhmwn.localauthorities.entities.District;
 import com.diaxeirishdhmwn.localauthorities.repositories.DistrictRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

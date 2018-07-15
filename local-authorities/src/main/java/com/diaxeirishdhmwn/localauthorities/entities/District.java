@@ -1,4 +1,4 @@
-package com.diaxeirishdhmwn.localauthorities.models;
+package com.diaxeirishdhmwn.localauthorities.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
