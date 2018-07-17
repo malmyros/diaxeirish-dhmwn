@@ -23,7 +23,6 @@ public class CouncilService {
     public Council findCouncilById(Long councilId) {
         return Optional.of(councilRepository.findById(councilId))
                 .get()
-                .orElseThrow(() -> new CouncilNotFoundException("Council not found. ID: " + councilId));
+                .orElseThrow(() -> new CouncilNotFoundException("Ο δήμος δεν βρέθηκε. ID: " + councilId));
     }
-
 }

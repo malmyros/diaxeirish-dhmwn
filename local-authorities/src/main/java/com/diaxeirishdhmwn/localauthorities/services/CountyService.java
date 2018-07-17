@@ -23,6 +23,6 @@ public class CountyService {
     public County findCountyById(Long countyId) {
         return Optional.of(countyRepository.findById(countyId))
                 .get()
-                .orElseThrow(() -> new CountyNotFoundException("County not found. ID: " + countyId));
+                .orElseThrow(() -> new CountyNotFoundException("Ο Νομός δεν βρέθηκε. ID: " + countyId));
     }
 }

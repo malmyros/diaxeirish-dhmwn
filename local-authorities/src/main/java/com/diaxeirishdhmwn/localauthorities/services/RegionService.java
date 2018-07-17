@@ -23,6 +23,6 @@ public class RegionService {
     public Region findRegionById(Long regionId) {
         return Optional.of(regionRepository.findById(regionId))
                 .get()
-                .orElseThrow(() -> new RegionNoFoundException("Region not found. ID: " + regionId));
+                .orElseThrow(() -> new RegionNoFoundException("Η Περιφέρεια δεν βρέθηκε. ID: " + regionId));
     }
 }

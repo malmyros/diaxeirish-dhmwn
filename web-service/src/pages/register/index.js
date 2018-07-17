@@ -1,58 +1,64 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import {Helmet} from "react-helmet";
+import SignupForm from "./components/form";
 
-const Register = () => (
-    <div className="container">
-        <Helmet>
-            <title>Διαχείριση Δήμων</title>
-        </Helmet>
-        <div className="row justify-content-center">
-            <div className="col-md-12 text-center mt-4">
-                <Link to={"/"}><h2>Διαχείριση Δήμων</h2></Link>
-            </div>
-            <div className="col-md-6">
-                <div className="card mt-4 mb-4">
-                    <header className="card-header text-center">
-                        <h4 className="card-title mt-2">Εγγραφή</h4>
-                    </header>
-                    <article className="card-body">
-                        <form>
-                            <div className="form-group">
-                                <label htmlFor="firstName">Όνομα</label>
-                                <input id="firstName" type="text" className="form-control" placeholder=""/>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="lastName">Επώνυμο</label>
-                                <input id="lastName" type="text" className="form-control" placeholder=""/>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="email">Email</label>
-                                <input id="email" type="email" className="form-control" placeholder=""/>
-                                <small className="form-text text-muted">
-                                    Δέν θα μοιραστούμε ποτέ το email σας με κανέναν.
-                                </small>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="password">Δημιουργία κωδικού</label>
-                                <input id="password" className="form-control" type="password"/>
-                            </div>
-                            <div className="form-group">
-                                <button type="submit" className="btn btn-primary btn-block">Εγγραφή</button>
-                            </div>
-                            <div className="text-center">
-                                <small className="text-muted">
-                                    Κάνοντας κλικ στο κουμπί "Εγγραφή", επιβεβαιώνετε ότι αποδέχεστε τούς <br/> Όρους χρήσης
-                                    και την Πολιτική Απορρήτου μας.
-                                </small>
-                            </div>
-                        </form>
-                    </article>
-                    <div className="border-top card-body text-center">Έχετε ήδη έναν λογαριασμό? <Link to={"/login"}>Σύνδεση</Link> </div>
+class Register extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isRegistered: null,
+        };
+        this.onRegistration = this.onRegistration.bind(this);
+    }
+
+    onRegistration(isRegistered) {
+        this.setState({isRegistered: isRegistered});
+    }
+
+    render() {
+        const {isRegistered} = this.state;
+
+        let registrationBlock = isRegistered
+            ? (<div className="card mt-4 mb-4">
+                <header className="card-header text-center">
+                    <h4 className="card-title mt-2">Επιτυχία</h4>
+                </header>
+                <article className="card-body text-center">
+                    Η εγγραφή σας ολοκληρώθηκε με επιτυχία. Στην συνέχεια Θα παραλάβετε ένα
+                    email με έναν σύνδεσμο για επιβεβαιώσετε τον λογαριασμό σας.
+                </article>
+                <div className="border-top card-body text-center">
+                    <Link to={"/"} className="btn btn-primary btn-block">Επιστροφή στην αρχική</Link>
+                </div>
+            </div>)
+            : (<div className="card mt-4 mb-4">
+                <header className="card-header text-center">
+                    <h4 className="card-title mt-2">Εγγραφή</h4>
+                </header>
+                <article className="card-body">
+                    <SignupForm onRegistration={this.onRegistration}/>
+                </article>
+                <div className="border-top card-body text-center">Έχετε ήδη έναν λογαριασμό? <Link
+                    to={"/login"}>Σύνδεση</Link></div>
+            </div>);
+
+        return (
+            <div className="container">
+                <Helmet>
+                    <title>Διαχείριση Δήμων | Εγγραφή</title>
+                </Helmet>
+                <div className="row justify-content-center">
+                    <div className="col-md-12 text-center mt-4">
+                        <Link to={"/"}><h2>Διαχείριση Δήμων</h2></Link>
+                    </div>
+                    <div className="col-md-6">
+                        {registrationBlock}
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-);
+        );
+    }
+}
 
 export default Register;

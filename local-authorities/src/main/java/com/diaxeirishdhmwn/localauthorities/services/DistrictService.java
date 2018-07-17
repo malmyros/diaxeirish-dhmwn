@@ -23,6 +23,6 @@ public class DistrictService {
     public District findDistrictById(Long districtId) {
         return Optional.of(districtRepository.findById(districtId))
                 .get()
-                .orElseThrow(() -> new DistrictNotFoundException("District not found. Id: " + districtId));
+                .orElseThrow(() -> new DistrictNotFoundException("Η Περιφερειακή ενότητα δεν βρέθηκε. Id: " + districtId));
     }
 }

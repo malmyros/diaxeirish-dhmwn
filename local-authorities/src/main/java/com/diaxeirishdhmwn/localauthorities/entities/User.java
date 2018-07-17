@@ -22,7 +22,7 @@ import java.util.Date;
 public class User
 {
     @Id
-    @SequenceGenerator(name = "seq_generator", sequenceName = "users_id_gen", allocationSize = 1)
+    @SequenceGenerator(name = "seq_generator", sequenceName = "users_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "seq_generator")
     private Long id;
 
