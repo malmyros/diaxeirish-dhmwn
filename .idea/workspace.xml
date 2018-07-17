@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1fd17c1-3cf5-4262-b23e-b36b14aa3743" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/configurations/SecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/dtos/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/exceptions/UserAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/exceptions/UserNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/repositories/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/validators/EmailValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/validators/ValidEmail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-service/src/pages/register/components/form/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local-authorities/src/test/java/com/diaxeirishdhmwn/localauthorities/controllers/UserControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/michail_almyros.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/michail_almyros.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/exceptions/CouncilNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/exceptions/CouncilNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/CouncilService.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/CouncilService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/CountyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/CountyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/DistrictService.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/DistrictService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/RegionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/RegionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/src/pages/forgotPassword/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/pages/forgotPassword/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/src/pages/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/src/pages/register/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/UserController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/local-authorities/.gradle/" />
     <ignored path="$PROJECT_DIR$/local-authorities/build/" />
@@ -98,28 +82,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web-service/src/pages/register/index.js">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="31" column="94" selection-start-line="31" selection-start-column="94" selection-end-line="31" selection-end-column="94" />
+            <state relative-caret-position="60">
+              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#1135#1136#0" expanded="true" />
+                <element signature="e#1189#1190#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web-service/src/pages/forgotPassword/index.js">
+      <file leaf-file-name="UserControllerTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/local-authorities/src/test/java/com/diaxeirishdhmwn/localauthorities/controllers/UserControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+            <state relative-caret-position="282">
+              <caret line="50" column="55" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users" pinned="false" current-in-tab="true">
+      <file leaf-file-name="users" pinned="false" current-in-tab="false">
         <entry file="das://ddbd0cf0-6c35-4fc0-9a0a-f6753f7393ad/database/local_authorities_db/schema/public/table/users">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -128,14 +113,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web-service/src/pages/register/components/form/index.js">
+      <file leaf-file-name="RegionControllerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/local-authorities/src/test/java/com/diaxeirishdhmwn/localauthorities/controllers/RegionControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="197" column="64" selection-start-line="197" selection-start-column="39" selection-end-line="197" selection-end-column="64" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="360">
+              <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegionController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/RegionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="22" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -146,9 +137,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit4 Test Class" />
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -160,22 +151,22 @@
       <find>district_id</find>
       <find>Λάρισας</find>
       <find />
-      <find>&lt;column name=&quot;version&quot; value=&quot;0&quot;/&gt;</find>
+      <find />
       <find>Δήμος</find>
       <find>-</find>
-      <find>&lt;changeSet id=&quot;</find>
+      <find />
       <find>Νομός</find>
       <find>cors</find>
-      <find>d-flex justify-content-between lh-condensed</find>
+      <find />
       <find>api.get(</find>
       <find>.catch(</find>
       <find>favicon</find>
       <find>citizens</find>
-      <find>&lt;Link to=</find>
+      <find />
       <find>409</find>
       <find>delete</find>
       <find>handleUserInput</find>
-      <find>import api</find>
+      <find />
       <find>api.g</find>
       <find>api.post</find>
       <find>api.get</find>
@@ -188,7 +179,7 @@
     <replaceStrings>
       <replace>&lt;/Link&gt;&lt;/li&gt;</replace>
       <replace>className</replace>
-      <replace>issueCount: Math.random()</replace>
+      <replace />
       <replace>randomNumber()</replace>
       <replace>local-authorities</replace>
       <replace>valueNumeric=&quot;0&quot;</replace>
@@ -707,7 +698,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web-service/src/pages/council/components/issue/index.js" />
         <option value="$PROJECT_DIR$/web-service/src/pages/council/components/volunteerActList/index.js" />
         <option value="$PROJECT_DIR$/web-service/src/pages/council/components/volunteerAct/index.js" />
         <option value="$PROJECT_DIR$/web-service/src/pages/council/index.js" />
@@ -746,7 +736,6 @@
         <option value="$PROJECT_DIR$/local-authorities/build.gradle" />
         <option value="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/configurations/WebConfiguration.java" />
         <option value="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/configurations/SecurityConfiguration.java" />
-        <option value="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/UserController.java" />
         <option value="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/validators/EmailValidator.java" />
         <option value="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/dtos/UserDto.java" />
         <option value="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/services/UserService.java" />
@@ -758,6 +747,8 @@
         <option value="$PROJECT_DIR$/web-service/src/pages/register/components/form/index.js" />
         <option value="$PROJECT_DIR$/web-service/src/pages/register/index.js" />
         <option value="$PROJECT_DIR$/web-service/src/pages/forgotPassword/index.js" />
+        <option value="$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/local-authorities/src/test/java/com/diaxeirishdhmwn/localauthorities/controllers/UserControllerTest.java" />
       </list>
     </option>
   </component>
@@ -790,7 +781,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Default" proportions="" version="1">
       <autoscrollFromSource Scope="true" PackagesPane="true" ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
@@ -978,6 +969,32 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="local-authorities" type="cbb8eebc:String" user="local-authorities" />
             </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="local-authorities" type="cbb8eebc:String" user="local-authorities" />
+              <item name="local-authorities_test" type="cbb8eebc:String" user="local-authorities_test" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="local-authorities" type="cbb8eebc:String" user="local-authorities" />
+              <item name="local-authorities_test" type="cbb8eebc:String" user="local-authorities_test" />
+              <item name="local-authorities/src/test" type="cbb8eebc:String" user="local-authorities/src/test" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="local-authorities" type="cbb8eebc:String" user="local-authorities" />
+              <item name="local-authorities_test" type="cbb8eebc:String" user="local-authorities_test" />
+              <item name="local-authorities/src/test" type="cbb8eebc:String" user="local-authorities/src/test" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="local-authorities" type="cbb8eebc:String" user="local-authorities" />
+              <item name="local-authorities_test" type="cbb8eebc:String" user="local-authorities_test" />
+              <item name="local-authorities/src/test" type="cbb8eebc:String" user="local-authorities/src/test" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com/diaxeirishdhmwn/localauthorities/controllers" type="cbb8eebc:String" user="com/diaxeirishdhmwn/localauthorities/controllers" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -992,28 +1009,81 @@
             <path>
               <item name="diaxeirish-dhmwn" type="b2602c69:ProjectViewProjectNode" />
               <item name="diaxeirish-dhmwn" type="462c0819:PsiDirectoryNode" />
-              <item name="web-service" type="462c0819:PsiDirectoryNode" />
+              <item name="local-authorities" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="diaxeirish-dhmwn" type="b2602c69:ProjectViewProjectNode" />
               <item name="diaxeirish-dhmwn" type="462c0819:PsiDirectoryNode" />
-              <item name="web-service" type="462c0819:PsiDirectoryNode" />
+              <item name="local-authorities" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="diaxeirish-dhmwn" type="b2602c69:ProjectViewProjectNode" />
               <item name="diaxeirish-dhmwn" type="462c0819:PsiDirectoryNode" />
-              <item name="web-service" type="462c0819:PsiDirectoryNode" />
+              <item name="local-authorities" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="diaxeirish-dhmwn" type="b2602c69:ProjectViewProjectNode" />
               <item name="diaxeirish-dhmwn" type="462c0819:PsiDirectoryNode" />
-              <item name="web-service" type="462c0819:PsiDirectoryNode" />
+              <item name="local-authorities" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="forgotPassword" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diaxeirish-dhmwn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="diaxeirish-dhmwn" type="462c0819:PsiDirectoryNode" />
+              <item name="local-authorities" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="localauthorities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diaxeirish-dhmwn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="diaxeirish-dhmwn" type="462c0819:PsiDirectoryNode" />
+              <item name="local-authorities" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="localauthorities" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diaxeirish-dhmwn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="diaxeirish-dhmwn" type="462c0819:PsiDirectoryNode" />
+              <item name="local-authorities" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="diaxeirish-dhmwn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="diaxeirish-dhmwn" type="462c0819:PsiDirectoryNode" />
+              <item name="local-authorities" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diaxeirish-dhmwn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="diaxeirish-dhmwn" type="462c0819:PsiDirectoryNode" />
+              <item name="local-authorities" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="localauthorities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diaxeirish-dhmwn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="diaxeirish-dhmwn" type="462c0819:PsiDirectoryNode" />
+              <item name="local-authorities" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="localauthorities" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1043,9 +1113,12 @@
       <recent name="com.diaxeirishdhmwn.localauthorities.region" />
       <recent name="com.diaxeirishdhmwn.localauthorities.county" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.diaxeirishdhmwn.localauthorities.exceptions" />
-      <recent name="com.diaxeirishdhmwn.localauthorities.validators" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web-service/src/pages/council/components" />
+      <recent name="$PROJECT_DIR$/web-service/src/pages/council" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/local-authorities" />
+      <recent name="$PROJECT_DIR$/local-authorities/src/main/docker" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/local-authorities/src/main/resources/db" />
@@ -1053,12 +1126,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web-service/src/pages/council/components" />
-      <recent name="$PROJECT_DIR$/web-service/src/pages/council" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/local-authorities" />
-      <recent name="$PROJECT_DIR$/local-authorities/src/main/docker" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.diaxeirishdhmwn.localauthorities.exceptions" />
+      <recent name="com.diaxeirishdhmwn.localauthorities.validators" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1073,7 +1143,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Compound.LocalAuthoritiesApplication_WebService">
+  <component name="RunManager" selected="JUnit.UserControllerTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -1130,7 +1200,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="DistrictControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="local-authorities_test" />
       <extension name="coverage">
         <pattern>
@@ -1141,9 +1211,55 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.diaxeirishdhmwn.localauthorities.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.diaxeirishdhmwn.localauthorities.controllers.DistrictControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="com.diaxeirishdhmwn.localauthorities.controllers.UserControllerTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="UserControllerTest.createUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="local-authorities_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.diaxeirishdhmwn.localauthorities.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.diaxeirishdhmwn.localauthorities.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.diaxeirishdhmwn.localauthorities.controllers.UserControllerTest" />
+      <option name="METHOD_NAME" value="createUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="UserControllerTest.findUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="local-authorities_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.diaxeirishdhmwn.localauthorities.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.diaxeirishdhmwn.localauthorities.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.diaxeirishdhmwn.localauthorities.controllers.UserControllerTest" />
+      <option name="METHOD_NAME" value="findUserById" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -1231,15 +1347,19 @@
       <item itemvalue="Compound.LocalAuthoritiesApplication_WebService" />
       <item itemvalue="npm.WebService" />
       <item itemvalue="Spring Boot.LocalAuthoritiesApplication" />
-      <item itemvalue="JUnit.DistrictControllerTest" />
       <item itemvalue="JUnit.CouncilControllerTest" />
       <item itemvalue="JUnit.CouncilControllerTest.findCouncilById" />
+      <item itemvalue="JUnit.UserControllerTest" />
+      <item itemvalue="JUnit.UserControllerTest.findUserById" />
+      <item itemvalue="JUnit.UserControllerTest.createUser" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserControllerTest" />
+        <item itemvalue="JUnit.UserControllerTest.createUser" />
+        <item itemvalue="JUnit.UserControllerTest.findUserById" />
         <item itemvalue="JUnit.CouncilControllerTest.findCouncilById" />
         <item itemvalue="JUnit.CouncilControllerTest" />
-        <item itemvalue="JUnit.DistrictControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1274,7 +1394,7 @@
       <workItem from="1531251332210" duration="6615000" />
       <workItem from="1531572888742" duration="22571000" />
       <workItem from="1531772273109" duration="8239000" />
-      <workItem from="1531860920668" duration="6964000" />
+      <workItem from="1531860920668" duration="8395000" />
     </task>
     <task id="LOCAL-00001" summary="Update the text in the footer links">
       <created>1529236972562</created>
@@ -1374,31 +1494,17 @@
       <option name="project" value="LOCAL" />
       <updated>1531654382849</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Implemented signup process&#10;&#10;Renamed the NotFoundExceptions to Greek&#10;&#10;Added Email validator and Annotation&#10;&#10;Created UserDto to avoid exposing the User entity&#10;&#10;Added Success message">
+      <created>1531869490143</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1531869490143</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DistrictControllerTest - 2018.06.25 at 23h 18m 40s.xml">
-      <configuration name="DistrictControllerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CouncilControllerTest - 2018.07.01 at 00h 20m 06s.xml">
-      <configuration name="CouncilControllerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CouncilControllerTest - 2018.07.01 at 00h 20m 53s.xml">
-      <configuration name="CouncilControllerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CouncilControllerTest_findCouncilById - 2018.07.01 at 00h 22m 22s.xml">
-      <configuration name="CouncilControllerTest.findCouncilById" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CouncilControllerTest_findCouncilById - 2018.07.01 at 00h 25m 23s.xml">
-      <configuration name="CouncilControllerTest.findCouncilById" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CouncilControllerTest_findCouncilById - 2018.07.01 at 00h 28m 13s.xml">
-      <configuration name="CouncilControllerTest.findCouncilById" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CouncilControllerTest_findCouncilById - 2018.07.01 at 00h 28m 55s.xml">
-      <configuration name="CouncilControllerTest.findCouncilById" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CouncilControllerTest_findCouncilById - 2018.07.01 at 00h 29m 27s.xml">
       <configuration name="CouncilControllerTest.findCouncilById" configurationId="JUnit" />
     </history-entry>
@@ -1408,9 +1514,30 @@
     <history-entry file="CouncilControllerTest_findCouncilById - 2018.07.01 at 00h 33m 47s.xml">
       <configuration name="CouncilControllerTest.findCouncilById" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UserControllerTest - 2018.07.18 at 00h 32m 00s.xml">
+      <configuration name="UserControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest - 2018.07.18 at 00h 33m 38s.xml">
+      <configuration name="UserControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest - 2018.07.18 at 00h 34m 18s.xml">
+      <configuration name="UserControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_findUserById - 2018.07.18 at 00h 35m 28s.xml">
+      <configuration name="UserControllerTest.findUserById" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_findUserById - 2018.07.18 at 00h 37m 21s.xml">
+      <configuration name="UserControllerTest.findUserById" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_findUserById - 2018.07.18 at 00h 38m 22s.xml">
+      <configuration name="UserControllerTest.findUserById" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_createUser - 2018.07.18 at 00h 39m 59s.xml">
+      <configuration name="UserControllerTest.createUser" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199075000" />
+    <option name="totallyTimeSpent" value="200506000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="726" extended-state="0" />
@@ -1427,7 +1554,7 @@
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.64228934" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.3290938" />
       <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.4983845" weight="0.48171702" />
-      <window_info active="true" anchor="bottom" id="Database Console" order="17" visible="true" weight="0.31319556" />
+      <window_info anchor="bottom" id="Database Console" order="17" weight="0.31319556" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49920508" visible="true" weight="0.26817447" />
       <window_info anchor="bottom" id="Problems" order="16" weight="0.32857144" />
@@ -1470,35 +1597,23 @@
     <MESSAGE value="Fixed prop-types on SidebarLink&#10;&#10;Added new component CouncilProfile" />
     <MESSAGE value="Added new table users&#10;&#10;Added new table issues&#10;&#10;Added new table issue_votes&#10;&#10;Fixed the name in the logicalFilePath of each db.changelog" />
     <MESSAGE value="Added bootstrap to loaded from localhost&#10;&#10;Removed unused id from the Citizen component&#10;&#10;Added Title to the Login, Register and Forgot Password pages&#10;&#10;Renamed model folder to entity to reflect the JPA" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added bootstrap to loaded from localhost&#10;&#10;Removed unused id from the Citizen component&#10;&#10;Added Title to the Login, Register and Forgot Password pages&#10;&#10;Renamed model folder to entity to reflect the JPA" />
+    <MESSAGE value="Implemented signup process&#10;&#10;Renamed the NotFoundExceptions to Greek&#10;&#10;Added Email validator and Annotation&#10;&#10;Created UserDto to avoid exposing the User entity&#10;&#10;Added Success message" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented signup process&#10;&#10;Renamed the NotFoundExceptions to Greek&#10;&#10;Added Email validator and Annotation&#10;&#10;Created UserDto to avoid exposing the User entity&#10;&#10;Added Success message" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/local-authorities/src/test/java/com/diaxeirishdhmwn/localauthorities/controllers/UserControllerTest.java</url>
+          <line>51</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/entities/Council.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/entities/County.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/entities/District.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/Home/src.zip!/java/lang/annotation/Documented.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1640,13 +1755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/RegionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web-service/src/pages/home/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1718,18 +1826,6 @@
           <folding>
             <element signature="e#943#944#0" expanded="true" />
             <element signature="e#995#996#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1135#1136#0" expanded="true" />
-            <element signature="e#1186#1187#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1818,6 +1914,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web-service/src/pages/forgotPassword/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web-service/src/pages/register/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
@@ -1828,10 +1931,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web-service/src/pages/forgotPassword/index.js">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.rest-assured/rest-assured/3.1.0/c424903edc0544b846e7770518da9b93e09bc202/rest-assured-3.1.0-sources.jar!/io/restassured/response/ResponseOptions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+        <state relative-caret-position="196">
+          <caret line="196" column="8" selection-start-line="196" selection-start-column="8" selection-end-line="196" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/RegionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local-authorities/src/test/java/com/diaxeirishdhmwn/localauthorities/controllers/RegionControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local-authorities/src/main/java/com/diaxeirishdhmwn/localauthorities/controllers/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding>
+            <element signature="e#1135#1136#0" expanded="true" />
+            <element signature="e#1189#1190#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1839,6 +1967,13 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local-authorities/src/test/java/com/diaxeirishdhmwn/localauthorities/controllers/UserControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="50" column="55" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
         </state>
       </provider>
     </entry>
